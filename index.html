@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISMS — School Management System | Durgaai Solutions</title>
-  <meta name="description" content="ISMS Is A Complete School ERP — Fees, Attendance, Exams, Library, Transport, and a Parent Portal App. Powered by Durgaai Solutions." />
+  <title>ISMS — School ERP | Parent &amp; Teacher Apps | Durgaai Solutions</title>
+  <meta name="description" content="ISMS Is A Complete School ERP — Fees, Attendance, Exams, Library &amp; Transport — With Dedicated Parent &amp; Teacher Apps For Every Registered School." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -61,6 +61,7 @@
       padding: 9px 22px; font-size: 14px; font-weight: 700;
       transition: background .2s, box-shadow .2s;
       box-shadow: 0 2px 12px rgba(10,138,74,.3);
+      white-space: nowrap; flex-shrink: 0;
     }
     .nav-btn:hover { background: var(--gm); box-shadow: 0 4px 20px rgba(10,138,74,.4); }
 
@@ -248,14 +249,69 @@
     }
     footer strong { color: rgba(255,255,255,.7); }
 
+    /* ── Apps Cards ──────────────────────────────── */
+    #apps { background: #fff; }
+    .apps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .app-card { border-radius: 24px; overflow: hidden; border: 1.5px solid var(--br); background: #fff; }
+    .app-card-head { padding: 28px 28px 24px; }
+    .app-card-head.parent { background: linear-gradient(135deg, #0b2d1a 0%, #0A8A4A 100%); }
+    .app-card-head.teacher { background: linear-gradient(135deg, #1e1b4b 0%, #4f46e5 100%); }
+    .app-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
+      border-radius: 100px; padding: 5px 14px;
+      font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 12px;
+    }
+    .app-card-head h3 { font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .app-card-head p  { font-size: .85rem; color: rgba(255,255,255,.72); line-height: 1.6; }
+    .app-card-body { padding: 22px 28px; background: var(--bg); }
+    .app-feat { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+    .app-feat:last-child { margin-bottom: 0; }
+    .app-feat-icon { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+    .app-feat-icon.pg { background: var(--gl); }
+    .app-feat-icon.tg { background: #ede9fe; }
+    .app-feat h5 { font-size: .87rem; font-weight: 700; color: var(--ind); margin-bottom: 2px; }
+    .app-feat p  { font-size: .8rem; color: var(--mu); line-height: 1.55; margin: 0; }
+
+    /* ── How-It-Works Tabs ────────────────────────── */
+    .tab-bar {
+      display: flex; background: var(--bg); border: 1.5px solid var(--br);
+      border-radius: 14px; padding: 5px; gap: 4px;
+      width: fit-content; margin: 0 auto 40px;
+    }
+    .tab-btn {
+      padding: 9px 28px; border-radius: 10px;
+      font-size: 14px; font-weight: 700; border: none;
+      background: none; cursor: pointer; color: var(--mu);
+      transition: background .2s, color .2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .tab-btn.active { background: #fff; color: var(--ind); box-shadow: 0 2px 8px rgba(0,0,0,.09); }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+
     /* ── Scroll fade-in ───────────────────────────── */
     .fade { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
     .fade.in { opacity: 1; transform: none; }
 
     /* ── Responsive ───────────────────────────────── */
+
+    /* Tablet wide (1050px) — shrink nav links before they crowd the button */
+    @media (max-width: 1050px) {
+      nav { padding: 0 4%; }
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 13px; }
+      .nav-btn { padding: 8px 16px; font-size: 13px; }
+    }
+
+    /* Tablet narrow (860px) — hide links, keep button */
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .nav-btn { font-size: 13px; padding: 9px 18px; }
+    }
+
     @media (max-width: 720px) {
       /* Navbar */
-      .nav-links { display: none; }
       .nav-btn { font-size: 12px; padding: 8px 14px; }
 
       /* Hero */
@@ -290,11 +346,14 @@
       .grid-4 { grid-template-columns: 1fr 1fr; gap: 14px; }
       .fc { padding: 20px 16px; }
       .fc-icon { width: 40px; height: 40px; font-size: 18px; }
-      .verify-wrap { padding: 28px 20px; }
+      .verify-wrap { padding: 28px 16px; }
       .field-group { flex-direction: column; }
-      .field-group button { height: 50px; }
+      .field-group input { width: 100%; }
+      .field-group button { width: 100%; height: 50px; }
       .chips { gap: 8px; }
       .chip { padding: 9px 16px; font-size: 12px; }
+      .apps-grid { grid-template-columns: 1fr; }
+      .tab-btn { padding: 9px 18px; font-size: 13px; }
     }
 
     @media (max-width: 400px) {
@@ -311,6 +370,7 @@
   </div>
   <div class="nav-links">
     <a href="#features">Features</a>
+    <a href="#apps">Apps</a>
     <a href="#verify">Find My School</a>
     <a href="#how">How It Works</a>
     <a href="#contact">Get Started</a>
@@ -326,17 +386,17 @@
 
   <div class="hero-pill">
     <span class="pill-dot"></span>
-    Now Live &nbsp;·&nbsp; Universal Parent App
+    Now Live &nbsp;·&nbsp; Parent &amp; Teacher Apps
   </div>
   <h1>School Management<br /><em>Simplified &amp; Unified</em></h1>
-  <p class="hero-sub">One ERP For Fees, Attendance, Exams, Library &amp; Transport — Plus A Single Parent App That Works For Every Registered School.</p>
+  <p class="hero-sub">One ERP For Fees, Attendance, Exams, Library &amp; Transport — With Dedicated <strong style="color:#4ade80">Parent</strong> &amp; <strong style="color:#93c5fd">Teacher</strong> Apps For Every Registered School.</p>
   <div class="hero-actions">
-    <a class="btn-g" href="#verify">🔍 &nbsp;Find My School</a>
+    <a class="btn-g" href="#apps">📱 &nbsp;Parent &amp; Teacher Apps</a>
     <a class="btn-ghost" href="#contact">Onboard Your School</a>
   </div>
   <div class="stats">
     <div class="stat"><div class="stat-n">100+</div><div class="stat-l">ERP MODULES</div></div>
-    <div class="stat"><div class="stat-n">1 App</div><div class="stat-l">UNIVERSAL APK</div></div>
+    <div class="stat"><div class="stat-n">2 Apps</div><div class="stat-l">PARENT &amp; TEACHER</div></div>
     <div class="stat"><div class="stat-n">Multi&#8209;School</div><div class="stat-l">ANY SCHOOL</div></div>
     <div class="stat"><div class="stat-n">Secure</div><div class="stat-l">ENCRYPTED SESSIONS</div></div>
   </div>
@@ -348,7 +408,7 @@
     <div class="tc fade">
       <span class="s-tag">WHAT'S INCLUDED</span>
       <h2 class="s-title">Everything A School Needs</h2>
-      <p class="s-sub">From Admission CRM to Fee Defaulter Reports — All Inside One Django + React ERP With A Native Android Parent Portal.</p>
+      <p class="s-sub">From Admission CRM to Fee Defaulter Reports — All Inside One Django + React ERP With Native <strong style="color:var(--g)">Parent</strong> &amp; <strong style="color:#4f46e5">Teacher</strong> Android Apps.</p>
     </div>
     <div class="grid-4">
       <div class="fc fade"><div class="fc-icon" style="background:#e3f7ed;">💰</div><h4>Fee Management</h4><p>Invoice Generation, Late-Fee Rules, Discounts, Advance Payments, And Defaulter Reports.</p></div>
@@ -359,6 +419,78 @@
       <div class="fc fade"><div class="fc-icon" style="background:#fdf2f8;">📣</div><h4>Communication</h4><p>In-App Notices, SMS/WhatsApp Templates, Message Logs And Push Notifications.</p></div>
       <div class="fc fade"><div class="fc-icon" style="background:#eef2ff;">🎫</div><h4>Gate Pass</h4><p>Early Exit Passes, Mark-In Confirmation, And Full Pass History In Parent Portal.</p></div>
       <div class="fc fade"><div class="fc-icon" style="background:#e3f7ed;">📊</div><h4>Admissions CRM</h4><p>Lead Pipeline, Kanban View, Follow-Up Logs, And One-Click Student Conversion.</p></div>
+      <div class="fc fade" style="border-color:#ede9fe;"><div class="fc-icon" style="background:#ede9fe;">🗓️</div><h4>Teacher Timetable</h4><p>Auto-Generated Weekly Schedule With Subject &amp; Period Assignments — Viewable Instantly In The Teacher App.</p></div>
+      <div class="fc fade" style="border-color:#ede9fe;"><div class="fc-icon" style="background:#ede9fe;">✏️</div><h4>Attendance Marking</h4><p>Teachers Take Date-Wise Class Attendance From The App — Visible To Parents In Real Time.</p></div>
+      <div class="fc fade" style="border-color:#ede9fe;"><div class="fc-icon" style="background:#ede9fe;">🅰️</div><h4>Exam Mark Entry</h4><p>Submit Theory &amp; Practical Marks For Assigned Subjects — Admin Controls Result Release To Parents.</p></div>
+      <div class="fc fade" style="border-color:#ede9fe;"><div class="fc-icon" style="background:#ede9fe;">📢</div><h4>Class Notices</h4><p>Post Class Or School-Wide Notices — Parents &amp; Students See Them Live In Their Portal Apps.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Two Apps ─────────────────────────────────── -->
+<section id="apps">
+  <div class="wrap">
+    <div class="tc fade">
+      <span class="s-tag">TWO APPS, ONE CODE</span>
+      <h2 class="s-title">Built For The Whole School</h2>
+      <p class="s-sub">The Same School Code Powers Both Apps — Parents And Teachers Each Get Their Own Tailored Experience.</p>
+    </div>
+    <div class="apps-grid fade">
+
+      <!-- Parent App -->
+      <div class="app-card">
+        <div class="app-card-head parent">
+          <div class="app-badge">📱 Parent App</div>
+          <h3>ISMS Parents Portal</h3>
+          <p>Stay Connected To Your Child's School Life — Fees, Attendance, Results, Gate Pass &amp; Notices In One Place.</p>
+        </div>
+        <div class="app-card-body">
+          <div class="app-feat">
+            <div class="app-feat-icon pg">💰</div>
+            <div><h5>Fee Statements</h5><p>View Invoices, Due Amounts, Payment History &amp; Defaulter Notices.</p></div>
+          </div>
+          <div class="app-feat">
+            <div class="app-feat-icon pg">📋</div>
+            <div><h5>Attendance</h5><p>Real-Time Date-Wise Attendance As Marked By The Class Teacher.</p></div>
+          </div>
+          <div class="app-feat">
+            <div class="app-feat-icon pg">📝</div>
+            <div><h5>Exam Results</h5><p>Marks Released By Admin — Theory, Practical &amp; Co-Scholastic.</p></div>
+          </div>
+          <div class="app-feat">
+            <div class="app-feat-icon pg">🎫</div>
+            <div><h5>Gate Pass</h5><p>Approve Early Exit, View Pass History &amp; Mark-In Confirmation.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher App -->
+      <div class="app-card">
+        <div class="app-card-head teacher">
+          <div class="app-badge">👨‍🏫 Teacher App</div>
+          <h3>ISMS Teacher Portal</h3>
+          <p>Manage Your Classes On The Go — Mark Attendance, Enter Marks, View Timetable &amp; Stay In Sync.</p>
+        </div>
+        <div class="app-card-body">
+          <div class="app-feat">
+            <div class="app-feat-icon tg">✏️</div>
+            <div><h5>Mark Attendance</h5><p>Take Date-Wise Class Attendance For Assigned Sections Instantly.</p></div>
+          </div>
+          <div class="app-feat">
+            <div class="app-feat-icon tg">🗓️</div>
+            <div><h5>Timetable View</h5><p>See Your Weekly Period Schedule With Subject &amp; Class Assignments.</p></div>
+          </div>
+          <div class="app-feat">
+            <div class="app-feat-icon tg">📊</div>
+            <div><h5>Exam Mark Entry</h5><p>Submit Theory &amp; Practical Marks For Your Assigned Subjects.</p></div>
+          </div>
+          <div class="app-feat">
+            <div class="app-feat-icon tg">📢</div>
+            <div><h5>Notices</h5><p>Post Class Or School Notices — Visible To Parents &amp; Students Live.</p></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -373,7 +505,7 @@
     </div>
     <div class="verify-wrap fade">
       <h3>🔍 Verify School Code</h3>
-      <p class="hint">The Parent App Needs a School Code to Connect to Your School's Private ERP Backend. Enter It Below to Verify.</p>
+      <p class="hint">Both The <strong>Parent App</strong> &amp; <strong>Teacher App</strong> Use A School Code To Connect To Your School's Private ERP Backend. Enter It Below To Verify.</p>
       <div class="field-group">
         <input type="text" id="CodeInput" placeholder="e.g.  2130850" maxlength="30" autocomplete="off" />
         <button onclick="VerifyCode()">Check</button>
@@ -389,31 +521,66 @@
     <div class="tc fade">
       <span class="s-tag">HOW IT WORKS</span>
       <h2 class="s-title">Get Connected In 3 Steps</h2>
-      <p class="s-sub">One APK — Any Registered School. Your School Code Links The App To Your School's Private Backend.</p>
+      <p class="s-sub">One School Code — Two Apps. Your Code Links Both The Parent &amp; Teacher Apps To Your School's Private Backend.</p>
     </div>
-    <div class="steps fade">
-      <div class="step">
-        <div class="step-n">1</div>
-        <div>
-          <h4>School Onboarding</h4>
-          <p>Durgaai Solutions Sets Up Your School's ISMS Backend And Assigns A Unique <strong>School Code</strong>. The Code Is Registered Here So The App Can Resolve It Instantly.</p>
+
+    <div class="tab-bar fade">
+      <button class="tab-btn active" onclick="SwitchTab('parent')">📱 Parent App</button>
+      <button class="tab-btn" onclick="SwitchTab('teacher')">👨‍🏫 Teacher App</button>
+    </div>
+
+    <div class="tab-pane active" id="tab-parent">
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">1</div>
+          <div>
+            <h4>School Onboarding</h4>
+            <p>Durgaai Solutions Sets Up Your School's ISMS Backend And Assigns A Unique <strong>School Code</strong>. The Code Is Registered Here So The App Can Resolve It Instantly.</p>
+          </div>
         </div>
-      </div>
-      <div class="step">
-        <div class="step-n">2</div>
-        <div>
-          <h4>Parent Credentials</h4>
-          <p>The School Admin Generates A <strong>PARENT-XXXXX</strong> Username And Password For Each Student Directly From The ERP Dashboard.</p>
+        <div class="step">
+          <div class="step-n">2</div>
+          <div>
+            <h4>Parent Credentials</h4>
+            <p>The School Admin Generates A <strong>PARENT-XXXXX</strong> Username And Password For Each Student Directly From The ERP Dashboard.</p>
+          </div>
         </div>
-      </div>
-      <div class="step">
-        <div class="step-n">3</div>
-        <div>
-          <h4>Login in the App</h4>
-          <p>Parents Open The <em>ISMS Parents Portal</em> App, Enter Their <strong>School Code + Username + Password</strong>, And Get Instant Access To Fees, Attendance, Results &amp; More.</p>
+        <div class="step">
+          <div class="step-n">3</div>
+          <div>
+            <h4>Login In The App</h4>
+            <p>Parents Open The <em>ISMS Parents Portal</em> App, Enter Their <strong>School Code + Username + Password</strong>, And Get Instant Access To Fees, Attendance, Results &amp; More.</p>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="tab-pane" id="tab-teacher">
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">1</div>
+          <div>
+            <h4>School Onboarding</h4>
+            <p>Same School Code Works For Both Apps. Durgaai Solutions Registers Your School Once — No Extra Setup Needed For The Teacher App.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <div>
+            <h4>Teacher Credentials</h4>
+            <p>The School Admin Creates A <strong>Teacher Account</strong> In The ERP Dashboard, Assigning Their Classes, Subjects &amp; Role Permissions.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <div>
+            <h4>Login In The Teacher App</h4>
+            <p>Teachers Open The <em>ISMS Teacher Portal</em> App, Enter Their <strong>School Code + Username + Password</strong>, And Access Timetables, Attendance, Mark Entry &amp; Notices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -426,12 +593,6 @@
     <a class="btn-g" href="mailto:contact@durgaaisolutions.in" style="font-size:15px;padding:16px 40px;">
       ✉️ &nbsp;Contact Durgaai Solutions
     </a>
-    <div class="chips">
-      <div class="chip">📱 One APK · Any School</div>
-      <div class="chip">🔐 Encrypted Sessions</div>
-      <div class="chip">☁️ Cloud or On-Premise</div>
-      <div class="chip">⚡ Live In 48 Hours</div>
-    </div>
   </div>
 </section>
 
@@ -470,6 +631,13 @@
         'Please Verify With Your School, Or Contact <a href="mailto:contact@durgaaisolutions.in">Durgaai Solutions</a>.';
         '<a href="mailto:contact@durgaaisolutions.in">Durgaai Solutions</a>.';
     }
+  }
+
+  function SwitchTab(Id) {
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.tab-pane').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelector('.tab-btn[onclick*="' + Id + '"]').classList.add('active');
+    document.getElementById('tab-' + Id).classList.add('active');
   }
 
   document.getElementById('CodeInput').addEventListener('keydown', function(e) {
