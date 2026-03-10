@@ -290,6 +290,23 @@
     .tab-pane { display: none; }
     .tab-pane.active { display: block; }
 
+    /* ── Download / Play Store ────────────────────── */
+    .play-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #1a1a2e; color: #fff; border-radius: 12px;
+      padding: 12px 20px; font-size: .82rem; font-weight: 700;
+      text-decoration: none; border: 1.5px solid rgba(255,255,255,.12);
+      transition: background .2s, transform .15s;
+      line-height: 1.3;
+    }
+    .play-btn:hover { background: #2d2d4e; transform: translateY(-2px); text-decoration: none; color: #fff; }
+    .play-btn .pb-icon { font-size: 1.4rem; }
+    .play-btn .pb-txt { display: flex; flex-direction: column; }
+    .play-btn .pb-sub { font-size: .7rem; font-weight: 400; color: rgba(255,255,255,.6); }
+    .play-btn .pb-name { font-size: .88rem; font-weight: 800; color: #fff; }
+    .app-dl { padding: 14px 28px 22px; border-top: 1.5px dashed var(--br); background: #fff; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .app-dl .coming-badge { font-size: .75rem; color: var(--g); font-weight: 700; background: var(--gl); border-radius: 8px; padding: 4px 10px; }
+
     /* ── Scroll fade-in ───────────────────────────── */
     .fade { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
     .fade.in { opacity: 1; transform: none; }
@@ -371,6 +388,7 @@
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#apps">Apps</a>
+    <a href="#download">Download</a>
     <a href="#verify">Find My School</a>
     <a href="#how">How It Works</a>
     <a href="#contact">Get Started</a>
@@ -462,6 +480,13 @@
             <div><h5>Gate Pass</h5><p>Approve Early Exit, View Pass History &amp; Mark-In Confirmation.</p></div>
           </div>
         </div>
+        <div class="app-dl">
+          <a class="play-btn" href="https://play.google.com/store/apps/details?id=com.durgaaisolutions.isms.ismsparentsportal" target="_blank" rel="noopener">
+            <span class="pb-icon">▶</span>
+            <span class="pb-txt"><span class="pb-sub">GET IT ON</span><span class="pb-name">Google Play</span></span>
+          </a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
       </div>
 
       <!-- Teacher App -->
@@ -489,8 +514,46 @@
             <div><h5>Notices</h5><p>Post Class Or School Notices — Visible To Parents &amp; Students Live.</p></div>
           </div>
         </div>
+        <div class="app-dl">
+          <a class="play-btn" href="https://play.google.com/store/search?q=isms+teacher+portal&c=apps" target="_blank" rel="noopener" style="background:#1e1b4b;border-color:rgba(255,255,255,.12);">
+            <span class="pb-icon">▶</span>
+            <span class="pb-txt"><span class="pb-sub">GET IT ON</span><span class="pb-name">Google Play</span></span>
+          </a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ── Download ──────────────────────────────── -->
+<section id="download" style="background:#fff;">
+  <div class="wrap">
+    <div class="tc fade">
+      <span class="s-tag">MOBILE APP</span>
+      <h2 class="s-title">Download The App</h2>
+      <p class="s-sub">Available On Android. Search For <strong>"ISMS Parents Portal"</strong> On Google Play Or Use The Button Below.</p>
+    </div>
+    <div class="fade" style="display:flex;justify-content:center;margin-top:36px;">
+      <div style="background:linear-gradient(135deg,#0b2d1a 0%,#0A8A4A 100%);border-radius:28px;padding:44px 52px;max-width:520px;width:100%;text-align:center;box-shadow:0 16px 64px rgba(10,138,74,.18);">
+        <div style="font-size:3.5rem;margin-bottom:16px;">📱</div>
+        <div style="font-weight:900;font-size:1.3rem;color:#fff;margin-bottom:8px;">ISMS Parents Portal</div>
+        <div style="font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:28px;">Fees &middot; Attendance &middot; Results &middot; Gate Pass &middot; Notices</div>
+        <a href="https://play.google.com/store/apps/details?id=com.durgaaisolutions.isms.ismsparentsportal"
+           target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:12px;background:#fff;color:#111827;border-radius:14px;padding:14px 28px;font-weight:800;font-size:.95rem;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,.18);transition:transform .15s;"
+           onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+          <span style="font-size:1.8rem;">▶</span>
+          <span style="display:flex;flex-direction:column;text-align:left;">
+            <span style="font-size:.72rem;font-weight:600;color:#6B7280;">GET IT ON</span>
+            <span style="font-size:1rem;font-weight:900;color:#111827;">Google Play</span>
+          </span>
+        </a>
+        <div style="margin-top:18px;font-size:.75rem;color:rgba(255,255,255,.45);">
+          Android 7.0+ &nbsp;&middot;&nbsp; Free To Use &nbsp;&middot;&nbsp; School Code Required
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -598,7 +661,7 @@
 
 <!-- ── Footer ──────────────────────────────────── -->
 <footer>
-  &copy; 2026 &nbsp;<strong>Durgaai Solutions</strong>&nbsp; &middot; &nbsp;Integrated School Management System (ISMS)&nbsp; &middot; &nbsp;All Rights Reserved.
+  &copy; 2026 &nbsp;<strong>Durgaai Solutions</strong>&nbsp; &middot; &nbsp;Integrated School Management System (ISMS)&nbsp; &middot; &nbsp;<a href="/privacy-policy" style="color:rgba(255,255,255,.6);">Privacy Policy</a>&nbsp; &middot; &nbsp;All Rights Reserved.
 </footer>
 
 <script>

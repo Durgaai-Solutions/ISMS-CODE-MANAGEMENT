@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — ISMS Parents Portal | Durgaai Solutions</title>
+  <meta name="description" content="Privacy Policy for the ISMS Parents Portal Android App By Durgaai Solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --g: #0A8A4A; --gd: #055C30; --gl: #E3F7ED; --gm: #0e9e56;
+      --ind: #1A1F5E; --wh: #FFFFFF;
+      --bg: #F8FAF9; --tx: #111827; --mu: #6B7280; --br: #E5E7EB;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--tx); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--g); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Navbar ── */
+    nav {
+      position: sticky; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,.07);
+      height: 64px; padding: 0 6%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--g), var(--gm));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 13px; color: #fff;
+    }
+    .logo-txt { font-weight: 800; font-size: 16px; color: var(--ind); }
+    .logo-txt span { color: var(--g); }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: var(--mu);
+      padding: 8px 18px; border-radius: 9px;
+      border: 1.5px solid var(--br);
+      transition: color .2s, border-color .2s;
+    }
+    .nav-back:hover { color: var(--tx); border-color: #c4c9d2; text-decoration: none; }
+
+    /* ── Hero Banner ── */
+    .pp-hero {
+      background: linear-gradient(135deg, #0d1b3e 0%, #0b2d1a 55%, #0A8A4A 100%);
+      padding: 56px 6% 52px; text-align: center;
+    }
+    .pp-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.18);
+      border-radius: 100px; padding: 6px 18px;
+      font-size: 12px; font-weight: 700; color: #a7f3d0;
+      margin-bottom: 18px; letter-spacing: .4px;
+    }
+    .pp-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #fff; letter-spacing: -.02em; margin-bottom: 12px; }
+    .pp-hero p  { color: rgba(255,255,255,.68); font-size: .95rem; max-width: 440px; margin: 0 auto; }
+    .pp-meta {
+      display: inline-flex; gap: 24px; flex-wrap: wrap; justify-content: center;
+      margin-top: 28px;
+    }
+    .pp-meta-item {
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px; padding: 8px 18px;
+      font-size: 12px; font-weight: 600; color: rgba(255,255,255,.75);
+    }
+    .pp-meta-item strong { color: #4ade80; }
+
+    /* ── Layout ── */
+    .pp-wrap {
+      max-width: 800px; margin: 0 auto;
+      padding: 52px 6% 80px;
+    }
+
+    /* ── TOC Sidebar Card ── */
+    .toc-card {
+      background: #fff; border: 1.5px solid var(--br); border-radius: 20px;
+      padding: 24px 28px; margin-bottom: 40px;
+    }
+    .toc-card h3 { font-size: .9rem; font-weight: 800; color: var(--ind); letter-spacing: .5px; text-transform: uppercase; margin-bottom: 14px; }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .toc-list li a {
+      font-size: .875rem; font-weight: 500; color: var(--mu);
+      display: flex; align-items: center; gap: 8px;
+      padding: 4px 0; transition: color .2s;
+    }
+    .toc-list li a:hover { color: var(--g); text-decoration: none; }
+    .toc-num { font-size: .75rem; font-weight: 700; color: var(--g); background: var(--gl); border-radius: 6px; padding: 2px 7px; }
+
+    /* ── Sections ── */
+    .pp-section { margin-bottom: 44px; }
+    .pp-section h2 {
+      font-size: 1.2rem; font-weight: 800; color: var(--ind);
+      padding-bottom: 10px; border-bottom: 2px solid var(--gl);
+      margin-bottom: 18px; display: flex; align-items: center; gap: 10px;
+    }
+    .sec-num {
+      min-width: 28px; height: 28px; border-radius: 8px;
+      background: var(--g); color: #fff; font-size: 12px; font-weight: 800;
+      display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .pp-section p  { color: #374151; font-size: .92rem; margin-bottom: 14px; }
+    .pp-section p:last-child { margin-bottom: 0; }
+    .pp-section ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .pp-section ul li {
+      font-size: .9rem; color: #374151;
+      padding-left: 22px; position: relative;
+    }
+    .pp-section ul li::before {
+      content: ""; position: absolute; left: 4px; top: 9px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--g); flex-shrink: 0;
+    }
+    .pp-section ul li strong { color: var(--ind); }
+
+    /* ── Info Boxes ── */
+    .info-box {
+      border-radius: 14px; padding: 18px 20px; margin: 18px 0;
+      font-size: .88rem; line-height: 1.65;
+    }
+    .info-box.green  { background: var(--gl); border-left: 4px solid var(--g); color: var(--gd); }
+    .info-box.blue   { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e40af; }
+    .info-box.yellow { background: #fffbeb; border-left: 4px solid #f59e0b; color: #92400e; }
+    .info-box strong { display: block; font-weight: 800; margin-bottom: 4px; }
+
+    /* ── Data Table ── */
+    .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: .875rem; border-radius: 12px; overflow: hidden; border: 1.5px solid var(--br); }
+    .data-table th { background: var(--ind); color: #fff; font-weight: 700; padding: 12px 16px; text-align: left; font-size: .8rem; letter-spacing: .4px; text-transform: uppercase; }
+    .data-table td { padding: 11px 16px; border-bottom: 1px solid var(--br); vertical-align: top; color: #374151; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--bg); }
+    .data-table td:first-child { font-weight: 600; color: var(--ind); }
+
+    /* ── Contact Card ── */
+    .contact-card {
+      background: linear-gradient(135deg, #0d1b3e 0%, #0f3720 100%);
+      border-radius: 20px; padding: 32px 36px; color: #fff; text-align: center;
+      margin-top: 44px;
+    }
+    .contact-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; }
+    .contact-card p  { color: rgba(255,255,255,.68); font-size: .875rem; margin-bottom: 20px; }
+    .contact-card a.btn {
+      display: inline-block;
+      background: var(--g); color: #fff; border-radius: 10px;
+      padding: 12px 28px; font-size: .9rem; font-weight: 700;
+      box-shadow: 0 4px 16px rgba(10,138,74,.4);
+      transition: background .2s; text-decoration: none;
+    }
+    .contact-card a.btn:hover { background: var(--gm); }
+    .contact-info { margin-top: 18px; font-size: .8rem; color: rgba(255,255,255,.5); }
+    .contact-info a { color: rgba(255,255,255,.75); }
+
+    /* ── Footer ── */
+    footer {
+      background: #0c1a0f; color: rgba(255,255,255,.4);
+      text-align: center; padding: 26px 6%;
+      font-size: .82rem; letter-spacing: .2px;
+    }
+    footer a { color: rgba(255,255,255,.6); }
+    footer strong { color: rgba(255,255,255,.7); }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .pp-hero { padding: 40px 5% 36px; }
+      .pp-wrap { padding: 36px 5% 60px; }
+      .toc-card { padding: 18px 20px; }
+      .contact-card { padding: 24px 20px; }
+      .data-table th, .data-table td { padding: 10px 12px; }
+      .pp-meta { gap: 10px; }
+      .pp-meta-item { padding: 7px 14px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ── -->
+<nav>
+  <a class="logo" href="/">
+    <div class="logo-mark">IS</div>
+    <span class="logo-txt">ISMS <span>Portal</span></span>
+  </a>
+  <a class="nav-back" href="/">&#8592; Back To Home</a>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="pp-hero">
+  <div class="pp-pill">📋 &nbsp;Legal Document</div>
+  <h1>Privacy Policy</h1>
+  <p>ISMS Parents Portal &mdash; Android Application<br />By Durgaai Solutions</p>
+  <div class="pp-meta">
+    <div class="pp-meta-item">Effective : <strong>March 11, 2026</strong></div>
+    <div class="pp-meta-item">Last Updated : <strong>March 11, 2026</strong></div>
+    <div class="pp-meta-item">App : <strong>ISMS Parents Portal</strong></div>
+  </div>
+</div>
+
+<!-- ── Content ── -->
+<div class="pp-wrap">
+
+  <div class="info-box green">
+    <strong>Summary</strong>
+    The ISMS Parents Portal App Collects Only The Information Necessary To Display Your Child's School Data (Fees, Attendance, Results, Etc.). Your Data Is Never Sold, Never Used For Advertising, And Is Stored Securely On Your School's Private Backend Server.
+  </div>
+
+  <!-- TOC -->
+  <div class="toc-card">
+    <h3>📑 &nbsp;Table Of Contents</h3>
+    <ol class="toc-list">
+      <li><a href="#s1"><span class="toc-num">1</span> Who We Are</a></li>
+      <li><a href="#s2"><span class="toc-num">2</span> Information We Collect</a></li>
+      <li><a href="#s3"><span class="toc-num">3</span> How We Use Your Information</a></li>
+      <li><a href="#s4"><span class="toc-num">4</span> Data Storage &amp; Security</a></li>
+      <li><a href="#s5"><span class="toc-num">5</span> Data Sharing &amp; Disclosure</a></li>
+      <li><a href="#s6"><span class="toc-num">6</span> Data Retention</a></li>
+      <li><a href="#s7"><span class="toc-num">7</span> Children's Privacy</a></li>
+      <li><a href="#s8"><span class="toc-num">8</span> Your Rights</a></li>
+      <li><a href="#s9"><span class="toc-num">9</span> Third-Party Services</a></li>
+      <li><a href="#s10"><span class="toc-num">10</span> Changes to This Policy</a></li>
+      <li><a href="#s11"><span class="toc-num">11</span> Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Who We Are -->
+  <div class="pp-section" id="s1">
+    <h2><span class="sec-num">1</span> Who We Are</h2>
+    <p><strong>Durgaai Solutions</strong> Is The Developer Of The <em>ISMS Parents Portal</em> Android application ("App"). The App Is A Component Of The Integrated School Management System (ISMS), An ERP Platform Used By Registered Schools To Manage Their Day-To-Day Academic And Administrative Operations.</p>
+    <p>The App Serves As A Read-Only Portal Allowing Parents And Guardians To View Their Child's School-Related Data, Including Fees, Attendance, Exam Results, Notices, And More.</p>
+    <p><strong>Developer:</strong> Durgaai Solutions<br />
+    <strong>Contact:</strong> <a href="mailto:contact@durgaaisolutions.in">contact@durgaaisolutions.in</a><br />
+    <strong>App Package:</strong> com.durgaaisolutions.isms.ismsparentsportal</p>
+  </div>
+
+  <!-- 2. Information We Collect -->
+  <div class="pp-section" id="s2">
+    <h2><span class="sec-num">2</span> Information We Collect</h2>
+    <p>The App Retrieves Data From Your School's Private Backend Server After You Successfully Log In. We Do Not Collect Any Data Independently Of Your School's System. All Information Displayed In The App Originates From Data Entered By Your School's Administrators.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Category</th><th>Data Retrieved</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Account Credentials</td>
+          <td>Username, Password (Sent Over HTTPS), Session Token</td>
+          <td>Authentication; Token Stored Encrypted On Device</td>
+        </tr>
+        <tr>
+          <td>Student Profile</td>
+          <td>Name, Class, Section, Roll No., Admission No., Date of Birth, Gender, Blood Group, Photo</td>
+          <td>Display Student Identity In The App</td>
+        </tr>
+        <tr>
+          <td>Parent / Family</td>
+          <td>Father &amp; Mother Names, Phone Numbers</td>
+          <td>Display Parent Contact Info In Profile</td>
+        </tr>
+        <tr>
+          <td>Fee Records</td>
+          <td>Invoice Amounts, Payment History, Due Amounts, Fee Breakdown</td>
+          <td>Show Fee Statements To Parents</td>
+        </tr>
+        <tr>
+          <td>Attendance</td>
+          <td>Date-Wise Present / Absent Records</td>
+          <td>Show Attendance Summary And Percentage</td>
+        </tr>
+        <tr>
+          <td>Exam Results</td>
+          <td>Subject Marks, Grades, Exam Name, Max Marks</td>
+          <td>Display Report Card In The App</td>
+        </tr>
+        <tr>
+          <td>Transport</td>
+          <td>Bus Route, Stop, Fare</td>
+          <td>Show Transport Booking Info</td>
+        </tr>
+        <tr>
+          <td>Library</td>
+          <td>Issued Books, Due Dates, Fines</td>
+          <td>Show Library Record In The App</td>
+        </tr>
+        <tr>
+          <td>Gate Passes</td>
+          <td>Early-Exit Pass Requests And Status</td>
+          <td>Allow Parents To View &amp; Confirm Gate Passes</td>
+        </tr>
+        <tr>
+          <td>Medical Records</td>
+          <td>School-Recorded Medical Notes</td>
+          <td>Display Medical History Tab In The App</td>
+        </tr>
+        <tr>
+          <td>School Code &amp; API URL</td>
+          <td>School Identifier Used To Resolve The Backend Server URL</td>
+          <td>Connect The App To The Correct School Server</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box blue">
+      <strong>What We Do NOT Collect</strong>
+      We Do Not Collect Device Identifiers, Advertising IDs, GPS Location, Contacts, Camera Or Microphone Access. The App Does Not Run Any Analytics SDKs, Tracking Scripts, Or Advertisement Libraries.
+    </div>
+  </div>
+
+  <!-- 3. How We Use Your Information -->
+  <div class="pp-section" id="s3">
+    <h2><span class="sec-num">3</span> How We Use Your Information</h2>
+    <p>All Data Retrieved From The School's Server Is Used Solely To Display Information To The Logged-In Parent Or Guardian Within The App. Specifically, We Use Your Data To:</p>
+    <ul>
+      <li>Authenticate Your Account And Maintain A Secure Session</li>
+      <li>Display Your Child's Academic And Administrative Records (Fees, Attendance, Results, Etc.)</li>
+      <li>Show Unread School Notices And Announcements</li>
+      <li>Allow You To Confirm Or View Gate Pass Requests</li>
+      <li>Display Your Child's Timetable, Library Status, Transport Booking, And Medical Records</li>
+    </ul>
+    <p>We Do <strong>Not</strong> Use Your Data For Advertising, Profiling, Marketing, Or Any Purpose Beyond The Above Direct Functionality.</p>
+  </div>
+
+  <!-- 4. Data Storage & Security -->
+  <div class="pp-section" id="s4">
+    <h2><span class="sec-num">4</span> Data Storage &amp; Security</h2>
+    <p><strong>On Your Device:</strong> The App Stores Your Session Token, School Code, API URL, And A Cached Copy Of Your Student Profile In Android's <code>EncryptedSharedPreferences</code> (AES-256-GCM / AES-256-SIV Encryption). This Data Persists Only While You Are Logged In And Is Permanently Deleted On Logout.</p>
+    <p><strong>On The School Server:</strong> All Student Data Resides Exclusively On The School's Private Backend Server (Hosted By The School Or Durgaai Solutions On Their Behalf). Communication Between The App And The Server Is Protected Via HTTPS (TLS).</p>
+    <p><strong>No Cloud Storage By Durgaai Solutions:</strong> Durgaai Solutions Does Not Maintain A Central Database Of Student Or Parent Data. We Have No Access To Individual School Data Unless The School Explicitly Grants Us Administrative Access For Support Purposes.</p>
+    <div class="info-box green">
+      <strong>Session Tokens</strong>
+      A Unique Session Token Is Issued On Each Login And Stored Encrypted On Your Device. It Is Invalidated On Logout Or When You Log In From Another Device.
+    </div>
+  </div>
+
+  <!-- 5. Data Sharing -->
+  <div class="pp-section" id="s5">
+    <h2><span class="sec-num">5</span> Data Sharing &amp; Disclosure</h2>
+    <p>We Do Not Sell, Rent, Trade, Or Share Your Personal Information With Any Third Party, Except In These Limited Circumstances:</p>
+    <ul>
+      <li><strong>Your School:</strong> Data Is Exchanged Only With The Backend Server Of The School You Selected — You Chose This Connection By Entering Your School Code.</li>
+      <li><strong>Legal Requirements:</strong> We May Disclose Information If Required By Applicable Law, Court Order, Or Governmental Authority.</li>
+      <li><strong>Safety:</strong> We May Disclose Information If We Believe In Good Faith That Disclosure Is Necessary To Protect The Rights, Property, Or Safety Of Durgaai Solutions, Our Users, Or The Public.</li>
+    </ul>
+    <p>There Are <strong>No Advertising Networks</strong>, <strong>No Analytics Providers</strong>, And <strong>No Social Media Integrations</strong> In This App That Receive Any User Data.</p>
+  </div>
+
+  <!-- 6. Data Retention -->
+  <div class="pp-section" id="s6">
+    <h2><span class="sec-num">6</span> Data Retention</h2>
+    <p>Data Cached On Your Device (Student Profile, Session Token, School Code) Is Retained Until You Log Out Of The App, At Which Point All Locally Stored Data Is Permanently Erased From The Device.</p>
+    <p>Data On The School's Backend Server Is Managed And Retained By The School Administration According To Their Own Policies. Contact Your School For Information About How Long Records Are Kept.</p>
+    <p>If You Uninstall The App Without Logging Out First, Android Will Automatically Delete All App Data From The Device.</p>
+  </div>
+
+  <!-- 7. Children's Privacy -->
+  <div class="pp-section" id="s7">
+    <h2><span class="sec-num">7</span> Children's Privacy</h2>
+    <p>This App Is Designed For <strong>Parents And Guardians</strong> Of School-Enrolled Students, Not For Children To Use Directly. The App Displays Children's Academic Records Strictly To Their Parent Or Guardian Who Has Been Issued Credentials By The School.</p>
+    <p>We Do Not Knowingly Collect Personal Information Directly From Children. All Student Data Is Provided To The App By The School Administration On Behalf Of Enrolled Families.</p>
+    <div class="info-box yellow">
+      <strong>Credential Security</strong>
+      Parent Login Credentials Are Issued By Your School's Administration. Keep Your Username And Password Confidential. Do Not Share Them With Your Child Or Anyone Who Should Not Have Access To The Student's Records.
+    </div>
+  </div>
+
+  <!-- 8. Your Rights -->
+  <div class="pp-section" id="s8">
+    <h2><span class="sec-num">8</span> Your Rights</h2>
+    <p>Since All Personal Data Originates From And Is Managed By Your School's System, Most Data Rights (Access, Correction, Deletion) Are Exercised Through Your School's Administration. However, You Have The Following Rights With Respect To Data On Your Device:</p>
+    <ul>
+      <li><strong>Right to Access:</strong> All Data The App Has Stored On Your Device Is Visible Within The App Itself.</li>
+      <li><strong>Right to Delete (Device Data):</strong> Log Out Of The App To Permanently Erase All Data From Your Device. Uninstalling The App Also Removes All Locally Stored Data.</li>
+      <li><strong>Right to Request Account Deletion:</strong> Contact Your School Administration To Request Deletion Of Your Parent Portal Credentials And Associated Student Records From The School's System.</li>
+      <li><strong>Correction:</strong> If Any Student Data Shown In The App Is Incorrect, Contact Your School's Administrative Office To Have It Corrected At The Source.</li>
+    </ul>
+  </div>
+
+  <!-- 9. Third-Party Services -->
+  <div class="pp-section" id="s9">
+    <h2><span class="sec-num">9</span> Third-Party Services</h2>
+    <p>The App Uses The Following Limited Set Of Third-Party Libraries. None Of Them Receive Personally Identifiable Information From Users Of This App:</p>
+    <ul>
+      <li><strong>Retrofit 2 / OkHttp3 (Square):</strong> HTTP Networking Library Used To Communicate With The School's Backend API Over HTTPS. No Data Is Sent To Square's Servers.</li>
+      <li><strong>Gson (Google):</strong> JSON Parsing Library. Processes Data In Memory Only; No Data Transmitted Externally.</li>
+      <li><strong>Glide (bumptech):</strong> Image Loading Library For Displaying Student Photos. Images Are Loaded Directly From Your School's Server.</li>
+      <li><strong>Material Components For Android (Google):</strong> UI Component Library. No Data Collection.</li>
+      <li><strong>AndroidX Jetpack Libraries (Google):</strong> Architecture Components (ViewModel, LiveData, Navigation, EncryptedSharedPreferences). No External Data Transmission.</li>
+    </ul>
+    <p>The App Does <strong>Not</strong> Integrate Firebase Analytics, Crashlytics, AdMob, Facebook SDK, Or Any Similar Data-Collecting Third-Party SDK.</p>
+  </div>
+
+  <!-- 10. Changes -->
+  <div class="pp-section" id="s10">
+    <h2><span class="sec-num">10</span> Changes To This Policy</h2>
+    <p>We May Update This Privacy Policy From Time To Time To Reflect Changes In The App's Functionality Or Applicable Law. When We Make Changes, We Will Update The "Last Updated" Date At The Top Of This Page.</p>
+    <p>Continued Use Of The App After Any Changes Constitutes Your Acceptance Of The Updated Policy. We Encourage You To Review This Page Periodically.</p>
+    <p>Significant Changes Will Also Be Communicated Through The App Or Through The Play Store Listing Update Notes.</p>
+  </div>
+
+  <!-- 11. Contact -->
+  <div class="pp-section" id="s11">
+    <h2><span class="sec-num">11</span> Contact Us</h2>
+    <p>If You Have Any Questions, Concerns, Or Requests Regarding This Privacy Policy Or How The App Handles Your Data, Please Contact Us:</p>
+  </div>
+
+  <div class="contact-card">
+    <h3>📩 &nbsp;Get In Touch</h3>
+    <p>We Aim To Respond To All Privacy-Related Inquiries Within 5 Business Days.</p>
+    <a class="btn" href="mailto:contact@durgaaisolutions.in">✉️ &nbsp;contact@durgaaisolutions.in</a>
+    <div class="contact-info">
+      Durgaai Solutions — Developer Of ISMS Parents Portal<br />
+      App Package : <a href="#">com.durgaaisolutions.isms.ismsparentsportal</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  &copy; 2026 &nbsp;<strong>Durgaai Solutions</strong>&nbsp; &middot; &nbsp;ISMS Parents Portal &mdash; Privacy Policy&nbsp; &middot; &nbsp;<a href="/">Home</a>&nbsp; &middot; &nbsp;All Rights Reserved.
+</footer>
+
+</body>
+</html>

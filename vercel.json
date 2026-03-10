@@ -1,4 +1,7 @@
 {
+  "rewrites": [
+    { "source": "/privacy-policy", "destination": "/Privacy-Policy.html" }
+  ],
   "headers": [
     {
       "source": "/Schools/(.*)",
