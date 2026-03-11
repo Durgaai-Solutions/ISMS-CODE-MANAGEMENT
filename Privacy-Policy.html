@@ -139,8 +139,8 @@
     }
     .section p { margin-bottom: 20px; color: var(--text-muted); font-size: 1.05rem; }
     .section ul { list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
-    .section ul li { display: flex; align-items: flex-start; gap: 16px; color: var(--text-muted); font-size: 1.05rem; }
-    .section ul li i { width: 20px; height: 20px; color: var(--primary); flex-shrink: 0; margin-top: 4px; }
+    .section ul li { position: relative; padding-left: 36px; color: var(--text-muted); font-size: 1.05rem; overflow-wrap: break-word; word-break: break-word; }
+    .section ul li i { position: absolute; left: 0; top: 4px; width: 20px; height: 20px; color: var(--primary); }
     
     /* Table */
     .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 16px; margin: 32px 0; background: var(--surface-glass); backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
@@ -167,7 +167,7 @@
       box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
     }
     .btn-mail:hover { background: #34d399; box-shadow: 0 0 30px rgba(16, 185, 129, 0.5); text-decoration: none; transform: translateY(-2px); }
-    .meta-footer { margin-top: 32px; color: #64748b; font-size: 0.9rem; font-family: 'JetBrains Mono', monospace; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .meta-footer { margin-top: 32px; color: #64748b; font-size: 0.9rem; font-family: 'JetBrains Mono', monospace; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); overflow-wrap: break-word; word-break: break-all; }
 
     /* Footer */
     .footer {
@@ -205,6 +205,7 @@
       .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
       .toc-list a { font-size: 0.9rem; }
       .section h2 { font-size: 1.4rem; }
+      .contact-cta { padding: 32px 20px; }
     }
   </style>
 </head>
