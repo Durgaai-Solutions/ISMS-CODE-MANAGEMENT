@@ -361,17 +361,17 @@
     .verify-card h3 { font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
     .verify-card p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 32px; }
     
-    .input-group { display: flex; gap: 16px; }
+    .input-group { display: flex; gap: 16px; width: 100%; }
     .input-group input {
-      flex: 1; height: 60px; border: 1px solid var(--border); border-radius: 12px;
-      padding: 0 24px; font-size: 16px; font-weight: 600; font-family: 'JetBrains Mono', monospace;
+      flex: 1; height: 64px; width: 100%; border: 1px solid var(--border); border-radius: 12px;
+      padding: 0 24px; font-size: 18px; font-weight: 600; font-family: 'JetBrains Mono', monospace;
       text-transform: uppercase; color: var(--text-main); background: rgba(0,0,0,0.3);
-      outline: none; transition: all 0.3s;
+      outline: none; transition: all 0.3s; text-align: center; letter-spacing: 1px;
     }
     .input-group input:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(16, 185, 129, 0.2); }
     .input-group button {
-      height: 60px; padding: 0 36px; background: var(--primary); color: #020617;
-      border: none; border-radius: 12px; font-weight: 700; font-size: 16px;
+      height: 64px; padding: 0 36px; background: var(--primary); color: #020617;
+      border: none; border-radius: 12px; font-weight: 700; font-size: 18px;
       cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 10px;
       box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); font-family: 'JetBrains Mono', monospace;
     }
@@ -426,8 +426,9 @@
       .hero h1 { font-size: 2.5rem; }
       .hero-buttons { flex-direction: column; width: 100%; max-width: 350px; }
       .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-      .input-group { flex-direction: column; }
-      .input-group input, .input-group button { width: 100%; }
+      .input-group { flex-direction: column; width: 100%; gap: 16px; }
+      .input-group input, .input-group button { width: 100%; height: 64px; }
+      .input-group button { justify-content: center; }
       .apps-layout { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
@@ -806,9 +807,10 @@ Payload secured via RSA-2048 at /var/reports/fin_daily.json
     <div class="footer-links">
       <h4>Legal</h4>
       <ul>
-        <li><a href="/Privacy-Policy.html">Data Manifest Protocol</a></li>
-        <li><a href="#">EULA Terms</a></li>
-        <li><a href="#">Compliance Docs</a></li>
+        <li><a href="Privacy-Policy.html">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Security Bulletins</a></li>
       </ul>
     </div>
   </div>
