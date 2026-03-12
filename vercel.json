@@ -3,7 +3,8 @@
     { "source": "/privacy-policy", "destination": "/Privacy-Policy.html" },
     { "source": "/terms-and-conditions", "destination": "/Terms.html" },
     { "source": "/refund-policy", "destination": "/Refund-Policy.html" },
-    { "source": "/security", "destination": "/Security.html" }
+    { "source": "/security", "destination": "/Security.html" },
+    { "source": "/delete-account", "destination": "/Delete-Account.html" }
   ],
   "headers": [
     {
