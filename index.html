@@ -127,6 +127,7 @@
       font-size: 20px;
       color: var(--text-main);
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
     .logo-txt span {
@@ -163,6 +164,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      white-space: nowrap;
     }
 
     .nav-action:hover {
@@ -1194,6 +1196,10 @@
     }
 
     @media (max-width: 768px) {
+      nav { padding: 0 4%; }
+      .logo-txt { font-size: 18px; }
+      .nav-action { padding: 8px 14px; font-size: 12px; }
+
       .nav-links {
         display: none;
       }
@@ -1232,6 +1238,10 @@
 
       .input-group button {
         justify-content: center;
+      }
+
+      .verify-card {
+        padding: 32px 20px;
       }
 
       .apps-layout {
