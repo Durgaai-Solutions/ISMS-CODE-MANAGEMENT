@@ -286,6 +286,7 @@
       gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
+      width: 100%;
     }
 
     .btn-primary {
@@ -523,7 +524,7 @@
     /* ── Features Grid ────────────────────────────── */
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
       gap: 24px;
     }
 
@@ -1196,77 +1197,116 @@
     }
 
     @media (max-width: 768px) {
+      /* ── Nav ── */
       nav { padding: 0 4%; }
-      .logo-txt { font-size: 18px; }
-      .nav-action { padding: 8px 14px; font-size: 12px; }
+      .logo-txt { font-size: 17px; }
+      .nav-action { padding: 8px 12px; font-size: 12px; gap: 6px; }
+      .nav-links { display: none; }
 
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 120px 5% 80px;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
+      /* ── Hero ── */
+      .hero { padding: 96px 5% 60px; }
+      .hero h1 { font-size: 2rem; letter-spacing: -0.01em; }
+      .hero p { font-size: 1rem; }
+      .hero-badge { font-size: 12px; padding: 6px 14px; }
 
       .hero-buttons {
         flex-direction: column;
         width: 100%;
-        max-width: 350px;
+        max-width: 360px;
+        margin: 0 auto;
       }
-
-      .btn-primary,
-      .btn-secondary {
+      .btn-primary, .btn-secondary {
         width: 100%;
         justify-content: center;
+        padding: 14px 20px;
+        font-size: 14px;
       }
 
-      .input-group {
+      /* ── Tech bar ── */
+      .tbi-val { font-size: 0.85rem; }
+
+      /* ── Metrics ── */
+      .metrics { gap: 12px; }
+      .metric-card { padding: 16px; border-radius: 14px; }
+      .metric-val { font-size: 1.6rem; white-space: normal; flex-wrap: wrap; gap: 8px; }
+      .metric-label { font-size: 0.72rem; }
+
+      /* ── Sections ── */
+      section { padding: 60px 5%; }
+      .cta { padding: 70px 5%; }
+      .section-head { margin-bottom: 40px; }
+      .section-title { font-size: 1.8rem; }
+      .section-desc { font-size: 1rem; }
+
+      /* ── CLI Terminal ── */
+      .cli-container { border-radius: 12px; }
+      .cli-header { padding: 10px 14px; }
+      .cli-title { display: none; }
+      .cli-body { padding: 16px; font-size: 0.72rem; line-height: 1.6; }
+      .cli-line { flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+      .cli-user { font-size: 0.72rem; }
+      .cli-cmd { font-size: 0.72rem; word-break: break-all; }
+      .cli-out { font-size: 0.72rem; margin-bottom: 12px; }
+
+      /* ── Features Grid ── */
+      .features-grid { grid-template-columns: 1fr; gap: 16px; }
+      .feature-card { padding: 24px; }
+      .feature-header h3 { font-size: 1.1rem; }
+      .ts-row {
         flex-direction: column;
-        width: 100%;
-        gap: 16px;
+        gap: 2px;
+        font-size: 0.78rem;
+        margin-bottom: 10px;
+      }
+      .ts-lbl { font-size: 0.7rem; letter-spacing: 0.5px; }
+      .ts-val { font-size: 0.78rem; word-break: break-word; }
+
+      /* ── Apps Section ── */
+      .apps-layout { grid-template-columns: 1fr; gap: 20px; }
+      .app-header { padding: 24px; }
+      .app-header h3 { font-size: 1.4rem; }
+      .app-header p { font-size: 0.9rem; max-width: 100%; }
+      .app-body { padding: 24px; }
+      .app-feature-list { gap: 20px; }
+      .app-footer {
+        padding: 16px 24px;
+        flex-wrap: wrap;
+        gap: 10px;
       }
 
-      .input-group input,
-      .input-group button {
-        width: 100%;
-        height: 64px;
-      }
+      /* ── Data Flow ── */
+      .arch-node { flex-direction: column; text-align: center; gap: 12px; padding: 18px; }
+      .arch-node-left { flex-direction: column; }
+      .arch-node-info h4 { font-size: 0.95rem; }
 
-      .input-group button {
-        justify-content: center;
-      }
+      /* ── CTA ── */
+      .cta h2 { font-size: 1.8rem; letter-spacing: -0.5px; }
+      .cta p { font-size: 1rem; }
 
-      .verify-card {
-        padding: 32px 20px;
-      }
+      /* ── Verify ── */
+      .verify-card { padding: 28px 16px; }
+      .verify-card h3 { font-size: 1.3rem; flex-wrap: wrap; gap: 8px; }
+      .input-group { flex-direction: column; width: 100%; gap: 12px; }
+      .input-group input, .input-group button { width: 100%; height: 56px; }
+      .input-group input { font-size: 15px; }
+      .input-group button { justify-content: center; font-size: 15px; }
 
-      .apps-layout {
-        grid-template-columns: 1fr;
-      }
+      /* ── Footer ── */
+      .footer { padding: 60px 5% 32px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
 
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
-      }
-
-      .arch-node {
-        flex-direction: column;
-        text-align: center;
-        gap: 16px;
-      }
-
-      .arch-node-left {
-        flex-direction: column;
-      }
+    /* ── Extra small screens (≤ 400px) ── */
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 1.75rem; }
+      .metrics { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .metric-val { font-size: 1.35rem; }
+      .cli-body { font-size: 0.65rem; padding: 12px; }
+      .cli-user { font-size: 0.65rem; }
+      .cli-cmd { font-size: 0.65rem; }
+      .cli-out { font-size: 0.65rem; }
+      .cta h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
