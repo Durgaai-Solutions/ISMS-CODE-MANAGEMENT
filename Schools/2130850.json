@@ -5,7 +5,16 @@
   "api_url": "https://isms.newangelspratapgarh.in/api/",
   "contact": "Contact School Administration",
   "logo": "",
-  "lat": 25.9122236182142,
-  "lng": 81.9878399065253,
-  "radius_meters": 20
+  "lat": 25.924387861819,
+  "lng": 81.98005587390695,
+  "radius_meters": 100,
+  "period_times": [
+    "8:00 - 8:45",
+    "8:50 - 9:35",
+    "9:40 - 10:25",
+    "-- Break --",
+    "10:40 - 11:25",
+    "11:30 - 12:15",
+    "12:20 - 1:05"
+  ]
 }
