@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -52,6 +52,16 @@
       --radius: 18px;
       --radius-sm: 10px;
       --radius-lg: 24px;
+      /* ── Extended Accent Palette ── */
+      --blue: #3b82f6;
+      --blue-light: #60a5fa;
+      --purple: #8b5cf6;
+      --purple-light: #a78bfa;
+      --amber: #f59e0b;
+      --amber-light: #fbbf24;
+      --cyan: #06b6d4;
+      --cyan-light: #22d3ee;
+      --rose: #f43f5e;
     }
 
     html {
@@ -693,6 +703,246 @@
     .feature-card:hover::before { opacity: 1; }
     .feature-card:hover::after { opacity: 1; }
 
+    /* ── Colored Card Variants ─────────────────────── */
+    .feature-card.blue .feature-icon { background: rgba(59,130,246,0.1); color: var(--blue-light); border-color: rgba(59,130,246,0.3); }
+    .feature-card.blue:hover { border-color: rgba(59,130,246,0.35); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(59,130,246,0.08); }
+    .feature-card.blue:hover .feature-icon { background: rgba(59,130,246,0.2); border-color: rgba(59,130,246,0.5); box-shadow: 0 0 20px rgba(59,130,246,0.3); }
+    .feature-card.blue::before { background: radial-gradient(circle at top right, rgba(59,130,246,0.1) 0%, transparent 70%); }
+    .feature-card.blue::after { background: linear-gradient(90deg, transparent 0%, var(--blue) 40%, var(--blue-light) 60%, transparent 100%); }
+    .feature-card.blue .ts-val { color: var(--blue-light); }
+
+    .feature-card.purple .feature-icon { background: rgba(139,92,246,0.1); color: var(--purple-light); border-color: rgba(139,92,246,0.3); }
+    .feature-card.purple:hover { border-color: rgba(139,92,246,0.35); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(139,92,246,0.08); }
+    .feature-card.purple:hover .feature-icon { background: rgba(139,92,246,0.2); border-color: rgba(139,92,246,0.5); box-shadow: 0 0 20px rgba(139,92,246,0.3); }
+    .feature-card.purple::before { background: radial-gradient(circle at top right, rgba(139,92,246,0.1) 0%, transparent 70%); }
+    .feature-card.purple::after { background: linear-gradient(90deg, transparent 0%, var(--purple) 40%, var(--purple-light) 60%, transparent 100%); }
+    .feature-card.purple .ts-val { color: var(--purple-light); }
+
+    .feature-card.amber .feature-icon { background: rgba(245,158,11,0.1); color: var(--amber-light); border-color: rgba(245,158,11,0.3); }
+    .feature-card.amber:hover { border-color: rgba(245,158,11,0.35); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(245,158,11,0.08); }
+    .feature-card.amber:hover .feature-icon { background: rgba(245,158,11,0.2); border-color: rgba(245,158,11,0.5); box-shadow: 0 0 20px rgba(245,158,11,0.3); }
+    .feature-card.amber::before { background: radial-gradient(circle at top right, rgba(245,158,11,0.1) 0%, transparent 70%); }
+    .feature-card.amber::after { background: linear-gradient(90deg, transparent 0%, var(--amber) 40%, var(--amber-light) 60%, transparent 100%); }
+    .feature-card.amber .ts-val { color: var(--amber-light); }
+
+    /* ── Colored Section Badges ─────────────────────── */
+    .section-badge.blue { background: rgba(59,130,246,0.08); color: var(--blue-light); border-color: rgba(59,130,246,0.3); box-shadow: 0 0 20px rgba(59,130,246,0.08); }
+    .section-badge.purple { background: rgba(139,92,246,0.08); color: var(--purple-light); border-color: rgba(139,92,246,0.3); box-shadow: 0 0 20px rgba(139,92,246,0.08); }
+    .section-badge.amber { background: rgba(245,158,11,0.08); color: var(--amber-light); border-color: rgba(245,158,11,0.3); box-shadow: 0 0 20px rgba(245,158,11,0.08); }
+    .section-badge.cyan { background: rgba(6,182,212,0.08); color: var(--cyan-light); border-color: rgba(6,182,212,0.3); box-shadow: 0 0 20px rgba(6,182,212,0.08); }
+
+    /* ── Portal Dashboard Section ────────────────────── */
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+      gap: 16px;
+    }
+
+    .portal-card {
+      background: rgba(8, 12, 30, 0.9);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: all 0.35s ease;
+      backdrop-filter: blur(12px);
+    }
+
+    .portal-card:hover {
+      background: rgba(12, 18, 40, 0.96);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+    }
+    .portal-card.g:hover { border-color: rgba(16,185,129,0.4); box-shadow: 0 12px 36px rgba(0,0,0,0.4), 0 0 20px rgba(16,185,129,0.1); }
+    .portal-card.b:hover { border-color: rgba(59,130,246,0.4); box-shadow: 0 12px 36px rgba(0,0,0,0.4), 0 0 20px rgba(59,130,246,0.1); }
+    .portal-card.p:hover { border-color: rgba(139,92,246,0.4); box-shadow: 0 12px 36px rgba(0,0,0,0.4), 0 0 20px rgba(139,92,246,0.1); }
+    .portal-card.a:hover { border-color: rgba(245,158,11,0.4); box-shadow: 0 12px 36px rgba(0,0,0,0.4), 0 0 20px rgba(245,158,11,0.1); }
+    .portal-card.c { border-color: rgba(6,182,212,0.2); }
+    .portal-card.c:hover { border-color: rgba(6,182,212,0.5); box-shadow: 0 12px 36px rgba(0,0,0,0.4), 0 0 24px rgba(6,182,212,0.15); }
+
+    .pc-icon {
+      width: 44px; height: 44px; border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .pc-icon.g { background: rgba(16,185,129,0.12); color: var(--secondary); border: 1px solid rgba(16,185,129,0.3); }
+    .pc-icon.b { background: rgba(59,130,246,0.12); color: var(--blue-light); border: 1px solid rgba(59,130,246,0.3); }
+    .pc-icon.p { background: rgba(139,92,246,0.12); color: var(--purple-light); border: 1px solid rgba(139,92,246,0.3); }
+    .pc-icon.a { background: rgba(245,158,11,0.12); color: var(--amber-light); border: 1px solid rgba(245,158,11,0.3); }
+    .pc-icon.c { background: linear-gradient(135deg, rgba(6,182,212,0.18), rgba(6,182,212,0.08)); color: var(--cyan-light); border: 1px solid rgba(6,182,212,0.4); box-shadow: 0 0 12px rgba(6,182,212,0.18); }
+
+    .pc-text h4 { font-size: 0.97rem; font-weight: 700; color: var(--text-main); margin-bottom: 5px; }
+    .pc-text p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; }
+
+    .portal-intro-block {
+      background: linear-gradient(145deg, rgba(4, 40, 30, 0.9), rgba(6, 78, 59, 0.45));
+      border: 1px solid rgba(16,185,129,0.2);
+      border-radius: 24px;
+      padding: 44px 48px 36px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .portal-intro-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+    }
+    .portal-intro-block .pib-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(16,185,129,0.1); color: var(--secondary);
+      border: 1px solid rgba(16,185,129,0.3); border-radius: 100px;
+      padding: 5px 14px; font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 18px;
+    }
+    .portal-intro-block h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; color: var(--text-main); margin-bottom: 12px; }
+    .portal-intro-block p { font-size: 1.02rem; color: rgba(255,255,255,0.68); line-height: 1.7; max-width: 640px; }
+
+    .teacher-intro-block {
+      background: linear-gradient(145deg, rgba(8, 20, 60, 0.9), rgba(29, 78, 216, 0.35));
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 24px;
+      padding: 44px 48px 36px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .teacher-intro-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--blue), var(--blue-light), transparent);
+    }
+    .teacher-intro-block .pib-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(59,130,246,0.1); color: var(--blue-light);
+      border: 1px solid rgba(59,130,246,0.3); border-radius: 100px;
+      padding: 5px 14px; font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 18px;
+    }
+    .teacher-intro-block h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; color: var(--text-main); margin-bottom: 12px; }
+    .teacher-intro-block p { font-size: 1.02rem; color: rgba(255,255,255,0.68); line-height: 1.7; max-width: 640px; }
+
+    .parent-intro-block {
+      background: linear-gradient(145deg, rgba(20, 10, 55, 0.9), rgba(109, 40, 217, 0.35));
+      border: 1px solid rgba(139,92,246,0.2);
+      border-radius: 24px;
+      padding: 44px 48px 36px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .parent-intro-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--purple), var(--purple-light), transparent);
+    }
+    .parent-intro-block .pib-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(139,92,246,0.1); color: var(--purple-light);
+      border: 1px solid rgba(139,92,246,0.3); border-radius: 100px;
+      padding: 5px 14px; font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 18px;
+    }
+    .parent-intro-block h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; color: var(--text-main); margin-bottom: 12px; }
+    .parent-intro-block p { font-size: 1.02rem; color: rgba(255,255,255,0.68); line-height: 1.7; max-width: 640px; }
+
+    .staff-intro-block {
+      background: linear-gradient(145deg, rgba(3,15,35,0.96), rgba(6,182,212,0.18));
+      border: 1px solid rgba(6,182,212,0.35);
+      border-radius: 24px;
+      padding: 44px 48px 36px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(6,182,212,0.08), inset 0 1px 0 rgba(6,182,212,0.1);
+    }
+    .staff-intro-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--cyan), var(--cyan-light), transparent);
+    }
+    .staff-intro-block::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .staff-intro-block .pib-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(6,182,212,0.15); color: var(--cyan-light);
+      border: 1px solid rgba(6,182,212,0.45); border-radius: 100px;
+      padding: 5px 14px; font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 18px;
+      box-shadow: 0 0 12px rgba(6,182,212,0.2);
+    }
+    .staff-intro-block h3 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: #e0f7fa; margin-bottom: 12px; }
+    .staff-intro-block p { font-size: 1rem; color: rgba(255,255,255,0.72); line-height: 1.7; max-width: 680px; }
+    .staff-tech-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .staff-tech-tag {
+      background: rgba(6,182,212,0.12); color: #67e8f9;
+      border: 1px solid rgba(6,182,212,0.35);
+      padding: 6px 14px; border-radius: 20px;
+      font-size: 0.8rem; font-family: var(--font-mono);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .staff-tech-tag:hover { background: rgba(6,182,212,0.22); box-shadow: 0 0 10px rgba(6,182,212,0.25); }
+    .staff-role-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .staff-role-card {
+      background: linear-gradient(145deg, rgba(4,18,36,0.95), rgba(6,182,212,0.06));
+      border: 1px solid rgba(6,182,212,0.25);
+      border-radius: 16px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .staff-role-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--cyan-light));
+      opacity: 0.7;
+    }
+    .staff-role-card:hover { border-color: rgba(6,182,212,0.5); box-shadow: 0 12px 40px rgba(6,182,212,0.12); transform: translateY(-4px); }
+    .src-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .src-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(6,182,212,0.08));
+      border: 1px solid rgba(6,182,212,0.4);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--cyan-light); flex-shrink: 0;
+      box-shadow: 0 0 16px rgba(6,182,212,0.2);
+    }
+    .src-label { font-size: 0.7rem; font-family: var(--font-mono); color: var(--cyan-light); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 4px; }
+    .src-title { font-size: 1.05rem; font-weight: 700; color: #e0f7fa; }
+    .src-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 11px; }
+    .src-list li { display: flex; gap: 10px; font-size: 0.9rem; color: rgba(255,255,255,0.72); align-items: flex-start; }
+    .src-list li::before { content: '\25B8'; color: var(--cyan-light); font-size: 0.8rem; margin-top: 1px; flex-shrink: 0; }
+
+    @media (max-width: 768px) {
+      .portal-intro-block, .teacher-intro-block, .parent-intro-block, .staff-intro-block { padding: 28px 24px; }
+      .portal-grid { grid-template-columns: 1fr; }
+      .staff-role-grid { grid-template-columns: 1fr; }
+    }
+
     .feature-header {
       display: flex;
       align-items: center;
@@ -902,8 +1152,8 @@
     }
 
     .app-header.teacher {
-      background: linear-gradient(135deg, rgba(2, 35, 25, 0.98) 0%, rgba(6, 78, 59, 0.9) 100%);
-      border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+      background: linear-gradient(135deg, rgba(8, 20, 60, 0.98) 0%, rgba(29, 78, 216, 0.5) 100%);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.2);
     }
 
     .app-header-bg {
@@ -1101,11 +1351,68 @@
 
     /* ── Verify Form ──────────────────────────────── */
     .verify-section {
-      background: linear-gradient(to bottom, transparent, rgba(16, 185, 129, 0.04), transparent);
+      background: linear-gradient(to bottom, transparent, rgba(16, 185, 129, 0.03), transparent);
+      position: relative;
+    }
+
+    .verify-section::before {
+      content: "";
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.07) 0%, transparent 68%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes verifyPulse {
+      0%, 100% { box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 40px rgba(16,185,129,0.06), inset 0 1px 0 rgba(255,255,255,0.04); }
+      50%       { box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 72px rgba(16,185,129,0.16), inset 0 1px 0 rgba(255,255,255,0.04); }
+    }
+
+    .verify-trust {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .verify-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.07);
+      border: 1px solid rgba(16, 185, 129, 0.16);
+      border-radius: 100px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .verify-trust-item i {
+      color: var(--primary);
+      width: 13px;
+      height: 13px;
+    }
+
+    .verify-hint {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #475569;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     .verify-card {
-      max-width: 650px;
+      max-width: 700px;
       margin: 0 auto;
       background: linear-gradient(145deg, rgba(13, 20, 40, 0.95), rgba(8, 12, 28, 0.98));
       border-radius: 24px;
@@ -1115,6 +1422,18 @@
       backdrop-filter: blur(20px);
       position: relative;
       overflow: hidden;
+      animation: verifyPulse 4s ease-in-out infinite;
+    }
+
+    .verify-card::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      right: -50px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+      pointer-events: none;
     }
 
     .verify-card::before {
@@ -1170,13 +1489,14 @@
 
     .input-group input:focus {
       border-color: var(--primary);
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+      box-shadow: 0 0 22px rgba(16, 185, 129, 0.28), inset 0 0 12px rgba(16, 185, 129, 0.05);
+      background: rgba(16, 185, 129, 0.04);
     }
 
     .input-group button {
       height: 64px;
       padding: 0 36px;
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: #020617;
       border: none;
       border-radius: 12px;
@@ -1187,13 +1507,13 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+      box-shadow: 0 0 24px rgba(16, 185, 129, 0.38);
       font-family: 'JetBrains Mono', monospace;
     }
 
     .input-group button:hover {
-      background: var(--secondary);
-      box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+      background: linear-gradient(135deg, var(--secondary), #6ee7b7);
+      box-shadow: 0 0 38px rgba(16, 185, 129, 0.58);
       transform: translateY(-2px);
     }
 
@@ -1224,22 +1544,43 @@
     }
 
     /* ── CTA ─────────────────────────────── */
+    @keyframes ctaGlow {
+      0%, 100% { opacity: 0.75; }
+      50%       { opacity: 1; }
+    }
+
     .cta {
       text-align: center;
       position: relative;
       overflow: hidden;
-      border-top: 1px solid rgba(16, 185, 129, 0.1);
-      border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+      border-top: 1px solid rgba(16, 185, 129, 0.15);
+      border-bottom: 1px solid rgba(16, 185, 129, 0.15);
       padding: 120px 5%;
-      background: rgba(0, 0, 0, 0.65);
+      background: linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(2,8,20,0.92) 50%, rgba(0,0,0,0.75) 100%);
     }
 
     .cta::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 90% 70% at 50% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 65%);
+      background:
+        radial-gradient(ellipse 65% 65% at 25% 50%, rgba(16, 185, 129, 0.09) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 65% at 75% 50%, rgba(6, 182, 212, 0.06) 0%, transparent 70%);
       pointer-events: none;
+      animation: ctaGlow 5s ease-in-out infinite;
+    }
+
+    .cta::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.014) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.014) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse 75% 75% at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 75%);
+      -webkit-mask-image: radial-gradient(ellipse 75% 75% at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 75%);
     }
 
     .cta h2 {
@@ -1250,6 +1591,10 @@
       z-index: 1;
       letter-spacing: -0.03em;
       line-height: 1.1;
+      background: linear-gradient(130deg, #ffffff 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .cta p {
@@ -1261,6 +1606,70 @@
       z-index: 1;
       line-height: 1.7;
     }
+
+    .cta-stats {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-stat {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(16, 185, 129, 0.16);
+      border-radius: 16px;
+      padding: 18px 24px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      min-width: 105px;
+    }
+
+    .cta-stat-num {
+      display: block;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--secondary);
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .cta-stat-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .cta-features {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-feature {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(16, 185, 129, 0.07);
+      border: 1px solid rgba(16, 185, 129, 0.18);
+      border-radius: 100px;
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .cta-feature i { color: var(--primary); width: 13px; height: 13px; }
 
     /* ── Professional Footer ─────────────────────────────── */
     .footer {
@@ -1518,9 +1927,11 @@
       <span class="logo-txt">ISMS <span>Core</span></span>
     </a>
     <div class="nav-links">
-      <a href="#features">ERP Features</a>
-      <a href="#cli">Infrastructure</a>
+      <a href="#features">ERP Modules</a>
+      <a href="#portal">Admin Portal</a>
+      <a href="#staff-app">Staff App</a>
       <a href="#apps">Mobile Apps</a>
+      <a href="About.html">About Us</a>
     </div>
     <a href="#registry" class="nav-action tech-font">
       <i data-lucide="log-in" style="width: 16px; height: 16px;"></i> PORTAL LOGIN
@@ -1568,22 +1979,22 @@
 
       <div class="metrics">
         <div class="metric-card">
-          <div class="metric-val"><i data-lucide="database"></i> 10<span style="font-size:0.5em; opacity:0.5;">+</span>
+          <div class="metric-val"><i data-lucide="layers" style="color:#34d399;"></i> 15<span style="font-size:0.5em; opacity:0.5;">+</span>
           </div>
-          <div class="metric-label">Key ERP Modules</div>
+          <div class="metric-label">ERP Modules &amp; Sub-Systems</div>
         </div>
         <div class="metric-card">
-          <div class="metric-val"><i data-lucide="smartphone"></i> 3</div>
-          <div class="metric-label">Core Apps (Portal, Parents, Teachers)</div>
+          <div class="metric-val"><i data-lucide="smartphone" style="color:#60a5fa;"></i> 3</div>
+          <div class="metric-label">Core Platforms (Portal, Android Apps)</div>
         </div>
         <div class="metric-card">
-          <div class="metric-val"><i data-lucide="network"></i> 100<span style="font-size:0.5em; opacity:0.5;">%</span>
+          <div class="metric-val"><i data-lucide="users" style="color:#a78bfa;"></i> 50K<span style="font-size:0.5em; opacity:0.5;">+</span>
           </div>
-          <div class="metric-label">API Coverage</div>
+          <div class="metric-label">Students Managed Across Schools</div>
         </div>
         <div class="metric-card">
-          <div class="metric-val"><i data-lucide="shield-check"></i> SSL</div>
-          <div class="metric-label">Secured Platform</div>
+          <div class="metric-val"><i data-lucide="shield-check" style="color:#fbbf24;"></i> SSL</div>
+          <div class="metric-label">Dedicated Servers · Zero Shared Hosting</div>
         </div>
       </div>
     </div>
@@ -1737,6 +2148,119 @@
             </div>
           </div>
         </div>
+
+        <div class="feature-card amber reveal">
+          <div class="feature-header">
+            <div class="feature-icon"><i data-lucide="bus"></i></div>
+            <h3>Transport Management</h3>
+          </div>
+          <p>Multi-Route Bus Management With Stop-Wise Student Tracking, Driver & Vehicle Records, And Transport Fee Assignment Per Student. Day-Wise Boarder Attendance Included.</p>
+          <div class="tech-specs">
+            <div class="ts-row"><span class="ts-lbl">Routing</span><span class="ts-val">Stop-Wise Allocation</span></div>
+            <div class="ts-row"><span class="ts-lbl">Fees</span><span class="ts-val">Per-Student Transport Fare</span></div>
+          </div>
+        </div>
+
+        <div class="feature-card blue reveal">
+          <div class="feature-header">
+            <div class="feature-icon"><i data-lucide="book-open"></i></div>
+            <h3>Library Management</h3>
+          </div>
+          <p>Full Book Catalog With ISBN Tracking, Issue & Return Workflows With Due-Date Management, Automated Overdue Fine Calculation, And Real-Time Availability Status.</p>
+          <div class="tech-specs">
+            <div class="ts-row"><span class="ts-lbl">Catalog</span><span class="ts-val">ISBN + Category Tracking</span></div>
+            <div class="ts-row"><span class="ts-lbl">Fines</span><span class="ts-val">Auto Overdue Calculation</span></div>
+          </div>
+        </div>
+
+        <div class="feature-card purple reveal">
+          <div class="feature-header">
+            <div class="feature-icon"><i data-lucide="landmark"></i></div>
+            <h3>Accounts &amp; Finance</h3>
+          </div>
+          <p>School-Level Day Book, Cash Register, Expense &amp; Purchase Vouchers, Bank Receipts &amp; Payments—All Integrated With The ISMS Fee Module For A Complete Financial Picture.</p>
+          <div class="tech-specs">
+            <div class="ts-row"><span class="ts-lbl">Records</span><span class="ts-val">Day Book &amp; Vouchers</span></div>
+            <div class="ts-row"><span class="ts-lbl">Reports</span><span class="ts-val">Financial Summaries</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ERP Admin Portal Section -->
+  <section id="portal" style="background: rgba(4, 8, 20, 0.6); padding: 100px 5%;">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-badge"><i data-lucide="monitor-check"></i> ADMIN WEB PORTAL</div>
+        <h2 class="section-title">The <span class="text-gradient">Admin ERP</span> Control Centre</h2>
+        <p class="section-desc">A Powerful Role-Based Browser Portal That Gives Principals, Accountants, And Administrators Real-Time Visibility And Total Control Over Every School Department—No App Required.</p>
+      </div>
+
+      <div class="portal-intro-block reveal">
+        <div class="pib-badge"><i data-lucide="cpu" style="width:12px;"></i> ISMS &middot; CENTRAL ERP WEB PORTAL</div>
+        <h3>One Login. Complete School Oversight.</h3>
+        <p>Manage Finances, Academics, Staff, Students, Bus Routes, Library, And Communication From A Single Secure Dashboard. Every Action Is Logged, Role-Gated, And Instantly Reflected Across All Connected Devices.</p>
+      </div>
+
+      <div class="portal-grid">
+        <div class="portal-card g">
+          <div class="pc-icon g"><i data-lucide="users"></i></div>
+          <div class="pc-text">
+            <h4>Multi-Role Access Control</h4>
+            <p>Granular Permissions For Principal, Admin, Accountant, Teacher &amp; Data Entry Roles With Full Audit Trails.</p>
+          </div>
+        </div>
+        <div class="portal-card g">
+          <div class="pc-icon g"><i data-lucide="file-text"></i></div>
+          <div class="pc-text">
+            <h4>PDF Report Generation</h4>
+            <p>Generate Fee Receipts, Report Cards, TC Certificates, &amp; Financial Day-Books As Downloadable PDFs Instantly.</p>
+          </div>
+        </div>
+        <div class="portal-card a">
+          <div class="pc-icon a"><i data-lucide="bar-chart-2"></i></div>
+          <div class="pc-text">
+            <h4>Live Analytics Dashboard</h4>
+            <p>Financial Summary, Attendance Rates, Admission Funnel Stats, And Fee Collection Trends At A Glance.</p>
+          </div>
+        </div>
+        <div class="portal-card g">
+          <div class="pc-icon g"><i data-lucide="calendar-range"></i></div>
+          <div class="pc-text">
+            <h4>Academic Year Management</h4>
+            <p>Manage Multiple Sessions, Class Promotions, Section Assignments, &amp; Subject Configurations Per Year.</p>
+          </div>
+        </div>
+        <div class="portal-card b">
+          <div class="pc-icon b"><i data-lucide="upload-cloud"></i></div>
+          <div class="pc-text">
+            <h4>Bulk Data Operations</h4>
+            <p>Mass Student Import Via Excel, Batch Fee Assignment, Bulk Mark Entry, And Class-Wide Operations.</p>
+          </div>
+        </div>
+        <div class="portal-card g">
+          <div class="pc-icon g"><i data-lucide="printer"></i></div>
+          <div class="pc-text">
+            <h4>Branded Invoice Designer</h4>
+            <p>Custom Fee Invoices With School Logo, Multiple Fee Heads, Discount Breakdowns, And Late Fine Itemisation.</p>
+          </div>
+        </div>
+        <div class="portal-card c">
+          <div class="pc-icon c"><i data-lucide="send"></i></div>
+          <div class="pc-text">
+            <h4>Mass Communication Hub</h4>
+            <p>Bulk Push Notifications, SMS Blasts, &amp; SMTP Emails With PDF Attachments Sent To Selected Parent Groups.</p>
+          </div>
+        </div>
+        <div class="portal-card p">
+          <div class="pc-icon p"><i data-lucide="shield-check"></i></div>
+          <div class="pc-text">
+            <h4>Dedicated Server Deployment</h4>
+            <p>Your ISMS Instance Runs On Exclusive Dedicated Hardware—Zero Shared Hosting—For Maximum Privacy &amp; Uptime.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1792,7 +2316,255 @@
     </div>
   </section>
 
-  <!-- Apps Section -->
+  <!-- Teachers & Parents Portal Detail Sections -->
+  <section id="teacher-portal" style="background: rgba(6, 10, 28, 0.7); padding: 100px 5%;">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-badge blue"><i data-lucide="graduation-cap"></i> TEACHERS APP</div>
+        <h2 class="section-title">Built For <span style="background: linear-gradient(to right, var(--blue-light), var(--blue)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Teaching Faculty</span></h2>
+        <p class="section-desc">A Dedicated Android App That Lets Every Teacher Manage Their Class Responsibilities From Their Phone—Attendance, Marks, Homework, Timetable, And Leave—All Synced Instantly With The ERP.</p>
+      </div>
+
+      <div class="teacher-intro-block reveal">
+        <div class="pib-badge"><i data-lucide="smartphone" style="width:12px;"></i> ISMS &middot; TEACHER MOBILE APP</div>
+        <h3>From Phone To ERP—Every Action, Instant &amp; Secure.</h3>
+        <p>Teachers No Longer Need To Visit The Office Or Submit Paper Registers. Mark Attendance, Enter Exam Scores, Post Homework, And View Their Full Timetable—All Directly From The App, Synced Live To The Admin Portal.</p>
+      </div>
+
+      <div class="portal-grid">
+        <div class="portal-card b">
+          <div class="pc-icon b"><i data-lucide="check-square"></i></div>
+          <div class="pc-text">
+            <h4>Daily Attendance Marking</h4>
+            <p>Mark Present, Absent, Or Leave For Every Student In An Assigned Class With A Single Tap—Saved Directly To The ERP.</p>
+          </div>
+        </div>
+        <div class="portal-card b">
+          <div class="pc-icon b"><i data-lucide="pen-tool"></i></div>
+          <div class="pc-text">
+            <h4>Exam Marks Entry</h4>
+            <p>Input Theory &amp; Practical Examination Scores Per Subject, Awaiting Principal Or Admin Validation Before Release.</p>
+          </div>
+        </div>
+        <div class="portal-card b">
+          <div class="pc-icon b"><i data-lucide="clipboard-list"></i></div>
+          <div class="pc-text">
+            <h4>Homework Assignments</h4>
+            <p>Digitally Draft, Attach Images Or PDFs, And Push Daily Homework Tasks Directly To Student Groups By Class.</p>
+          </div>
+        </div>
+        <div class="portal-card b">
+          <div class="pc-icon b"><i data-lucide="calendar-days"></i></div>
+          <div class="pc-text">
+            <h4>Timetable Viewer</h4>
+            <p>View Full Daily &amp; Weekly Lecture Schedules Based On The Active Master Timetable Set By The Administrator.</p>
+          </div>
+        </div>
+        <div class="portal-card b">
+          <div class="pc-icon b"><i data-lucide="plane-takeoff"></i></div>
+          <div class="pc-text">
+            <h4>Staff Leave Applications</h4>
+            <p>Submit And Track Personal Staff Leave Requests Natively Through The App—No Paper Forms Or Office Visits.</p>
+          </div>
+        </div>
+        <div class="portal-card b">
+          <div class="pc-icon b"><i data-lucide="bell"></i></div>
+          <div class="pc-text">
+            <h4>Notice Board Access</h4>
+            <p>Receive All School Circulars, Management Notices, &amp; Exam Schedules Posted By The Admin Through Push Alerts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Staff Application Section -->
+  <section id="staff-app" style="background: linear-gradient(180deg, rgba(2,10,25,1) 0%, rgba(4,22,44,0.98) 40%, rgba(2,12,28,1) 100%); padding: 100px 5%; position: relative; overflow: hidden;">
+    <div style="position:absolute; top:20%; left:50%; transform:translateX(-50%); width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(6,182,212,0.06) 0%, transparent 70%); pointer-events:none;"></div>
+    <div class="container">
+      <div class="section-head">
+        <div class="section-badge cyan"><i data-lucide="tablet-smartphone"></i> STAFF APPLICATION</div>
+        <h2 class="section-title">One App For <span style="background: linear-gradient(to right, var(--cyan-light), var(--cyan)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">All School Staff</span></h2>
+        <p class="section-desc">ISMS Staff App Is A Cross-Platform Hybrid Application Built On Ionic &amp; Capacitor &mdash; Available On Android Devices And Accessible Via Any Web Browser. Teaching And Non-Teaching Staff Alike Manage Their Work Digitally From A Single, Unified Interface.</p>
+      </div>
+
+      <!-- Tech intro block -->
+      <div class="staff-intro-block reveal">
+        <div class="pib-badge"><i data-lucide="cpu" style="width:12px;"></i> IONIC &middot; CAPACITOR &middot; CROSS-PLATFORM</div>
+        <h3>Built With Web Technologies &mdash; Native Performance On Any Device.</h3>
+        <p>The ISMS Staff App Is Engineered Using The Ionic Framework With Angular, Wrapped By Capacitor For Native Android Deployment. A Single Codebase Powers Both The Android APK And The Browser-Based Staff Portal &mdash; So Every Device Gets Full Functionality Via HTTPS.</p>
+        <div class="staff-tech-tags">
+          <span class="staff-tech-tag">Ionic Framework</span>
+          <span class="staff-tech-tag">Capacitor Native Bridge</span>
+          <span class="staff-tech-tag">Web PWA Fallback</span>
+          <span class="staff-tech-tag">JWT Auth</span>
+          <span class="staff-tech-tag">Tailwind CSS</span>
+          <span class="staff-tech-tag">Real-Time REST API</span>
+        </div>
+      </div>
+
+      <!-- Staff role grid -->
+      <div class="staff-role-grid">
+        <div class="staff-role-card">
+          <div class="src-header">
+            <div class="src-icon"><i data-lucide="graduation-cap"></i></div>
+            <div>
+              <div class="src-label">Teaching Staff</div>
+              <div class="src-title">Class Teachers &amp; Subject Faculty</div>
+            </div>
+          </div>
+          <ul class="src-list">
+            <li>Mark Daily Student Attendance Per Class Period</li>
+            <li>Enter Theory &amp; Practical Exam Marks By Subject</li>
+            <li>Post Daily Homework Assignments With File Attachments</li>
+            <li>View Master Timetable &amp; Period Schedule</li>
+            <li>Apply For &amp; Track Personal Leave Requests</li>
+            <li>Receive School Circulars &amp; Exam Notices</li>
+          </ul>
+        </div>
+        <div class="staff-role-card">
+          <div class="src-header">
+            <div class="src-icon"><i data-lucide="briefcase"></i></div>
+            <div>
+              <div class="src-label">Non-Teaching Staff</div>
+              <div class="src-title">Admin, Peons &amp; Supportive Staff</div>
+            </div>
+          </div>
+          <ul class="src-list">
+            <li>Mark &amp; View Personal Daily Attendance</li>
+            <li>Submit Leave Applications Digitally</li>
+            <li>Track Leave Approval Status In Real-Time</li>
+            <li>View Official School Notices &amp; Circulars</li>
+            <li>Access Payroll &amp; Salary Slip Summaries</li>
+            <li>Receive Direct Push Notifications From Management</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature cards -->
+      <div class="portal-grid">
+        <div class="portal-card c">
+          <div class="pc-icon c"><i data-lucide="shield-check"></i></div>
+          <div class="pc-text">
+            <h4>Role-Based Access</h4>
+            <p>Each User Sees Only What Their Role Permits &mdash; Teachers, Non-Teaching Staff, Admin, And Principal All Have Separate Permission Scopes.</p>
+          </div>
+        </div>
+        <div class="portal-card c">
+          <div class="pc-icon c"><i data-lucide="wifi"></i></div>
+          <div class="pc-text">
+            <h4>Works On Any Network</h4>
+            <p>Connects Securely Over Any Internet Connection &mdash; School LAN, Mobile Data, Or Wi-Fi. All Data Transmitted Over Encrypted HTTPS.</p>
+          </div>
+        </div>
+        <div class="portal-card c">
+          <div class="pc-icon c"><i data-lucide="zap"></i></div>
+          <div class="pc-text">
+            <h4>Instant Sync</h4>
+            <p>Every Action On The App Reflects Immediately In The Admin ERP &mdash; No Delays, No Manual Upload Required. Real-Time REST API Architecture.</p>
+          </div>
+        </div>
+        <div class="portal-card c">
+          <div class="pc-icon c"><i data-lucide="download-cloud"></i></div>
+          <div class="pc-text">
+            <h4>Android APK Distribution</h4>
+            <p>School-Specific Builds Distributed Directly As APK Files &mdash; No Play Store Dependency. Easy Installation And Update Management By Admin.</p>
+          </div>
+        </div>
+        <div class="portal-card c">
+          <div class="pc-icon c"><i data-lucide="lock"></i></div>
+          <div class="pc-text">
+            <h4>Secure JWT Sessions</h4>
+            <p>Staff Sessions Are Protected With JWT Tokens And Automatic Expiry &mdash; Unauthorized Access And Session Hijacking Prevented By Design.</p>
+          </div>
+        </div>
+        <div class="portal-card c">
+          <div class="pc-icon c"><i data-lucide="monitor-smartphone"></i></div>
+          <div class="pc-text">
+            <h4>Browser Access Fallback</h4>
+            <p>Staff Without Android Devices Can Access All Features Through A Web Browser At Full Functionality &mdash; One Codebase, Every Device.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="parent-portal" style="background: rgba(8, 4, 24, 0.7); padding: 100px 5%;">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-badge purple"><i data-lucide="heart-handshake"></i> PARENTS APP</div>
+        <h2 class="section-title">Total Transparency For <span style="background: linear-gradient(to right, var(--purple-light), var(--purple)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Parents</span></h2>
+        <p class="section-desc">A Read-Only Secured Android App Giving Parents Real-Time Visibility Into Everything That Matters—Fees, Attendance, Results, Notices, Homework, Transport, And More.</p>
+      </div>
+
+      <div class="parent-intro-block reveal">
+        <div class="pib-badge"><i data-lucide="smartphone" style="width:12px;"></i> ISMS &middot; PARENTS ANDROID APP</div>
+        <h3>Stay Informed. Always. Without Calling The School.</h3>
+        <p>Parents Get Push Notifications The Moment Their Child Is Marked Absent, A Fee Notice Is Generated, Or Exam Results Are Released. Complete School Transparency—Directly On Their Phones.</p>
+      </div>
+
+      <div class="portal-grid">
+        <div class="portal-card p">
+          <div class="pc-icon p"><i data-lucide="receipt"></i></div>
+          <div class="pc-text">
+            <h4>Fee Invoices &amp; Payment History</h4>
+            <p>View All Fee Components, Pending Dues, Advance Deposits, Applied Discounts, And Complete Payment History.</p>
+          </div>
+        </div>
+        <div class="portal-card p">
+          <div class="pc-icon p"><i data-lucide="activity"></i></div>
+          <div class="pc-text">
+            <h4>Live Attendance Alerts</h4>
+            <p>Receive Instant Push Notification If The Student Is Marked Absent Or Late—With Class &amp; Date Details.</p>
+          </div>
+        </div>
+        <div class="portal-card p">
+          <div class="pc-icon p"><i data-lucide="trophy"></i></div>
+          <div class="pc-text">
+            <h4>Exam Results &amp; Report Cards</h4>
+            <p>Access Released Examination Results, Subject-Wise Scores, Grades, Co-Scholastic Ratings &amp; Report Cards.</p>
+          </div>
+        </div>
+        <div class="portal-card p">
+          <div class="pc-icon p"><i data-lucide="calendar-check"></i></div>
+          <div class="pc-text">
+            <h4>Class Timetable</h4>
+            <p>View The Active Class Timetable Including Subject, Teacher Assignment, And Exam Schedule For The Term.</p>
+          </div>
+        </div>
+        <div class="portal-card p">
+          <div class="pc-icon p"><i data-lucide="book-open"></i></div>
+          <div class="pc-text">
+            <h4>Library &amp; Homework Feed</h4>
+            <p>Track Issued Library Books With Due Dates &amp; View Daily Homework Posted By Class Teachers In Real Time.</p>
+          </div>
+        </div>
+        <div class="portal-card p">
+          <div class="pc-icon p"><i data-lucide="bus"></i></div>
+          <div class="pc-text">
+            <h4>Transport &amp; Bus Details</h4>
+            <p>See Allocated Bus Route, Stop Assignment, &amp; Transport Fee Status For The Student's Academic Year.</p>
+          </div>
+        </div>
+        <div class="portal-card p">
+          <div class="pc-icon p"><i data-lucide="bell-ring"></i></div>
+          <div class="pc-text">
+            <h4>School Notice Board</h4>
+            <p>Receive Circulars, Holiday Notices, Emergency Alerts &amp; Event Announcements With Direct PDF Attachment Viewing.</p>
+          </div>
+        </div>
+        <div class="portal-card p">
+          <div class="pc-icon p"><i data-lucide="qr-code"></i></div>
+          <div class="pc-text">
+            <h4>Gate Pass &amp; Visitor Tracking</h4>
+            <p>Get Notified When A Gate Pass Is Issued For Your Child And View Complete Exit/Return Records.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apps Download Section -->
   <section id="apps">
     <div class="container">
       <div class="section-head">
@@ -1857,11 +2629,11 @@
         </div>
 
         <!-- Teacher App -->
-        <div class="app-showcase" style="border-style: dashed; opacity: 0.8;">
+        <div class="app-showcase">
           <div class="app-header teacher">
             <i data-lucide="braces" class="app-header-bg"></i>
-            <span class="app-ident" style="color:var(--text-muted); border-color:var(--border);"><i
-                data-lucide="terminal-square" style="width:14px;"></i> Node: Admin-Write</span>
+            <span class="app-ident" style="color: var(--blue-light); border-color: rgba(59,130,246,0.35); background: rgba(59,130,246,0.08);"><i
+                data-lucide="terminal-square" style="width:14px;"></i> Node: Faculty-Write</span>
             <h3>Teacher App</h3>
             <p>Teacher-Focused Tool Created To Instantly Record Daily Class Attendance And Securely Input
               Theory/Practical Exam Grades Right From Their Phone.</p>
@@ -1870,7 +2642,7 @@
             <div class="app-feature-list">
               <div class="app-feature-item">
                 <div class="app-f-icon"
-                  style="color:var(--text-muted); border-color:var(--border); background:rgba(255,255,255,0.05);"><i
+                  style="color:var(--blue-light); border-color:rgba(59,130,246,0.25); background:rgba(59,130,246,0.08);"><i
                     data-lucide="focus"></i></div>
                 <div class="app-feature-content">
                   <h4>Attendance Register</h4>
@@ -1879,7 +2651,7 @@
               </div>
               <div class="app-feature-item">
                 <div class="app-f-icon"
-                  style="color:var(--text-muted); border-color:var(--border); background:rgba(255,255,255,0.05);"><i
+                  style="color:var(--blue-light); border-color:rgba(59,130,246,0.25); background:rgba(59,130,246,0.08);"><i
                     data-lucide="pen-tool"></i></div>
                 <div class="app-feature-content">
                   <h4>Examination Marks Entry</h4>
@@ -1888,7 +2660,7 @@
               </div>
               <div class="app-feature-item">
                 <div class="app-f-icon"
-                  style="color:var(--text-muted); border-color:var(--border); background:rgba(255,255,255,0.05);"><i
+                  style="color:var(--blue-light); border-color:rgba(59,130,246,0.25); background:rgba(59,130,246,0.08);"><i
                     data-lucide="clipboard-list"></i></div>
                 <div class="app-feature-content">
                   <h4>Homework Assignment</h4>
@@ -1898,7 +2670,7 @@
               </div>
               <div class="app-feature-item">
                 <div class="app-f-icon"
-                  style="color:var(--text-muted); border-color:var(--border); background:rgba(255,255,255,0.05);"><i
+                  style="color:var(--blue-light); border-color:rgba(59,130,246,0.25); background:rgba(59,130,246,0.08);"><i
                     data-lucide="calendar"></i></div>
                 <div class="app-feature-content">
                   <h4>Timetable & Leave Sync</h4>
@@ -1909,11 +2681,10 @@
             </div>
           </div>
           <div class="app-footer">
-            <div class="store-btn"
-              style="opacity: 0.5; pointer-events: none; border-color: rgba(255,255,255,0.1); color:var(--text-muted); background:transparent;">
-              <i data-lucide="lock"></i> STAFF ONLY
-            </div>
-            <span class="tech-font" style="font-size: 12px; color: #f59e0b;">INTERNAL USE ONLY</span>
+            <a href="#teacher-portal" class="store-btn" style="background: rgba(59,130,246,0.1); color: var(--blue-light); border-color: rgba(59,130,246,0.3);">
+              <i data-lucide="log-in"></i> STAFF PORTAL
+            </a>
+            <span class="tech-font" style="font-size: 12px; color: var(--blue-light);">FACULTY ACCESS ONLY</span>
           </div>
         </div>
       </div>
@@ -1930,14 +2701,22 @@
           Platform Connection.</p>
       </div>
 
+      <div class="verify-trust">
+        <div class="verify-trust-item"><i data-lucide="shield-check"></i> 100% Secure Lookup</div>
+        <div class="verify-trust-item"><i data-lucide="zap"></i> Instant Result</div>
+        <div class="verify-trust-item"><i data-lucide="lock"></i> Read-Only Query</div>
+      </div>
+
       <div class="verify-card">
         <h3><i data-lucide="shield-check"></i> Verify School Connection</h3>
-        <p>Input Your Assigned Alphanumeric School Code Below.</p>
+        <p>Input Your Assigned Alphanumeric School Code Below To Confirm Registration.</p>
 
         <div class="input-group">
           <input type="text" id="CodeInput" placeholder="SCHOOL_CODE" maxlength="30" autocomplete="off" />
           <button onclick="VerifyCode()"><i data-lucide="check-circle"></i> VERIFY</button>
         </div>
+
+        <p class="verify-hint">Press VERIFY Or Hit Enter To Check Your School Code</p>
 
         <div class="verify-result" id="VR"></div>
       </div>
@@ -1949,10 +2728,30 @@
     <h2>Digitize Your Campus Today.</h2>
     <p>Eliminate Paperwork And Streamline Daily Operations With A Platform Specifically Crafted For Indian Schools. We Deploy Your Customized ERP Infrastructure Exclusively On <strong>Dedicated Servers—Absolutely No Shared Hosting</strong>—Ensuring Maximum Security And Performance Within A Standard 48-Hour Delivery Window.</p>
     
-    <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--text-muted);">
-      <div style="display: flex; align-items: center; gap: 8px;"><i data-lucide="server" style="color: var(--primary); width: 16px;"></i> Dedicated Cloud Server</div>
-      <div style="display: flex; align-items: center; gap: 8px;"><i data-lucide="shield" style="color: var(--primary); width: 16px;"></i> No Shared Hosting</div>
-      <div style="display: flex; align-items: center; gap: 8px;"><i data-lucide="map-pin" style="color: var(--primary); width: 16px;"></i> Crafted For India</div>
+    <div class="cta-stats">
+      <div class="cta-stat">
+        <span class="cta-stat-num">3000+</span>
+        <span class="cta-stat-label">Schools Onboard</span>
+      </div>
+      <div class="cta-stat">
+        <span class="cta-stat-num">500K+</span>
+        <span class="cta-stat-label">Student Records</span>
+      </div>
+      <div class="cta-stat">
+        <span class="cta-stat-num">99.9%</span>
+        <span class="cta-stat-label">Avg Uptime</span>
+      </div>
+      <div class="cta-stat">
+        <span class="cta-stat-num">48H</span>
+        <span class="cta-stat-label">Deployment SLA</span>
+      </div>
+    </div>
+
+    <div class="cta-features">
+      <div class="cta-feature"><i data-lucide="server"></i> Dedicated Cloud Server</div>
+      <div class="cta-feature"><i data-lucide="shield"></i> No Shared Hosting</div>
+      <div class="cta-feature"><i data-lucide="map-pin"></i> Crafted For India</div>
+      <div class="cta-feature"><i data-lucide="zap"></i> 48-Hour Deployment</div>
     </div>
 
     <a href="mailto:contact@durgaaisolutions.in" class="btn-primary tech-font" style="margin-top: 10px;">
@@ -2019,20 +2818,22 @@
     // Scroll Reveal
     (function() {
       const targets = document.querySelectorAll(
-        '.section-head, .feature-card, .app-showcase, .metric-card, .arch-node, .verify-card, .cta h2, .cta p'
+        '.section-head, .feature-card, .app-showcase, .metric-card, .arch-node, .verify-card, .cta h2, .cta p, .portal-card, .portal-intro-block, .teacher-intro-block, .parent-intro-block, .staff-intro-block, .staff-feature-card'
       );
-      targets.forEach(el => el.classList.add('reveal'));
+      targets.forEach(el => {
+        if (!el.classList.contains('reveal')) el.classList.add('reveal');
+      });
       const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const delay = parseInt(entry.target.dataset.delay || 0);
             setTimeout(() => entry.target.classList.add('visible'), delay);
             io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.08 });
       targets.forEach((el, i) => {
-        el.dataset.delay = (i % 5) * 70;
+        el.dataset.delay = (i % 6) * 60;
         io.observe(el);
       });
     })();

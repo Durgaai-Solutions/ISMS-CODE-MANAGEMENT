@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -80,6 +80,18 @@
       mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
       -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
     }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+    }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2);
@@ -98,7 +110,7 @@
     }
 
     /* Wrap */
-    .container { max-width: 900px; margin: 0 auto; padding: 60px 5% 100px; }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px 5% 100px; }
 
     /* Summary Box */
     .alert-box {
@@ -108,14 +120,14 @@
       backdrop-filter: blur(12px);
     }
     .alert-box.green { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #a7f3d0; }
-    .alert-box.blue { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #a7f3d0; }
+    .alert-box.blue { background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3); color: #bfdbfe; }
     .alert-box.yellow { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: #fde68a; }
     .alert-icon { flex-shrink: 0; color: inherit; }
     .alert-content strong { display: block; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
 
     /* TOC */
     .toc {
-      background: var(--surface-glass); border: 1px solid var(--border); border-radius: 20px;
+      background: var(--surface-glass); border: 1px solid var(--border); border-left: 3px solid var(--primary); border-radius: 0 20px 20px 0;
       padding: 40px; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); backdrop-filter: blur(16px);
     }
     .toc h3 { font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
@@ -127,15 +139,16 @@
     .toc-num { background: rgba(16, 185, 129, 0.1); color: var(--primary); font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(16, 185, 129, 0.2); }
 
     /* Sections */
-    .section { margin-bottom: 64px; }
+    .section { margin-bottom: 40px; padding: 32px 36px; background: rgba(15, 23, 42, 0.28); border: 1px solid var(--border); border-left: 3px solid var(--primary); border-radius: 0 16px 16px 0; scroll-margin-top: 90px; }
     .section h2 {
       font-size: 1.6rem; font-weight: 700; color: var(--text-main);
       display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
       padding-bottom: 20px; border-bottom: 1px solid var(--border);
     }
     .sec-badge {
-      background: var(--primary); color: #020617; border-radius: 10px; width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #020617; border-radius: 10px; width: 36px; height: 36px;
       display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; font-family: 'JetBrains Mono', monospace;
+      box-shadow: 0 0 16px rgba(16, 185, 129, 0.4);
     }
     .section p { margin-bottom: 20px; color: var(--text-muted); font-size: 1.05rem; }
     .section ul { list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
@@ -145,7 +158,7 @@
     /* Table */
     .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 16px; margin: 32px 0; background: var(--surface-glass); backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
     table { width: 100%; border-collapse: collapse; font-size: 0.95rem; text-align: left; }
-    th { background: rgba(255,255,255,0.02); color: var(--text-main); font-weight: 700; padding: 18px 24px; border-bottom: 1px solid var(--border); text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.85rem; }
+    th { background: rgba(16, 185, 129, 0.08); color: var(--text-main); font-weight: 700; padding: 18px 24px; border-bottom: 1px solid var(--border); text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.85rem; }
     td { padding: 18px 24px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-muted); }
     tr:last-child td { border-bottom: none; }
     tr:hover td { background: rgba(255,255,255,0.01); color: var(--text-main); }
@@ -154,10 +167,11 @@
     /* Contact Card */
     .contact-cta {
       background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
-      border: 1px solid var(--border);
+      border: 1px solid rgba(16, 185, 129, 0.18);
+      border-top: 3px solid var(--primary);
       border-radius: 24px; padding: 48px; text-align: center;
-      margin-top: 80px; box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-      backdrop-filter: blur(20px);
+      margin-top: 80px; box-shadow: 0 20px 60px rgba(0,0,0,0.7), 0 0 40px rgba(16, 185, 129, 0.07);
+      backdrop-filter: blur(20px); position: relative;
     }
     .contact-cta h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--text-main); }
     .contact-cta p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px; }
@@ -211,6 +225,7 @@
       .toc h3 { font-size: 1.1rem; }
       .toc-list a { font-size: 0.875rem; gap: 12px; }
       .alert-box { padding: 16px; gap: 12px; flex-direction: row; }
+      .section { padding: 20px 20px; border-radius: 0 12px 12px 0; }
       .section h2 { font-size: 1.3rem; flex-wrap: wrap; }
       .section p { font-size: 0.95rem; }
       .section ul li { font-size: 0.95rem; }
@@ -232,23 +247,168 @@
 </nav>
 
 <div class="hero">
-  <div class="hero-badge"><i data-lucide="file-text" style="width: 16px; height: 16px;"></i> Official Document</div>
+  <div class="hero-badge"><i data-lucide="file-check" style="width: 16px; height: 16px;"></i> Legal Agreement</div>
   <h1>Terms & Conditions</h1>
-  <p>Legal Framework Defining Acceptable Usage Of The ISMS Architecture.</p>
+  <p>Legal Framework Defining Acceptable Usage, Data Ownership, Service Levels, And User Obligations For The ISMS Core Ecosystem.</p>
+  <div class="meta-bar">
+    <div class="meta-item"><i data-lucide="calendar"></i> REVISED : June 2026</div>
+    <div class="meta-item"><i data-lucide="refresh-cw"></i> VERSION : v2.1</div>
+    <div class="meta-item"><i data-lucide="globe"></i> JURISDICTION : Republic Of India</div>
+  </div>
 </div>
 <div class="container">
 
-  <div class="section">
-    <h2><span class="sec-badge">01</span> User Agreement</h2>
+  <div class="alert-box green">
+    <div class="alert-icon"><i data-lucide="file-check"></i></div>
+    <div class="alert-content">
+      <strong>Binding Agreement</strong>
+      By Accessing Or Using The ISMS Core Ecosystem &mdash; Including The ERP Admin Portal, Parents App, And Staff App &mdash; Your Educational Institution And Its Authorized Users Agree To The Following Terms. Please Read Carefully Before Proceeding.
+    </div>
+  </div>
+
+  <div class="toc">
+    <h3><i data-lucide="list"></i> Terms Sections</h3>
+    <ul class="toc-list">
+      <li><a href="#t1"><span class="toc-num">01</span> User Agreement &amp; Eligibility</a></li>
+      <li><a href="#t2"><span class="toc-num">02</span> Acceptable Use &amp; APIs</a></li>
+      <li><a href="#t3"><span class="toc-num">03</span> Intellectual Property Rights</a></li>
+      <li><a href="#t4"><span class="toc-num">04</span> Data Ownership &amp; School Responsibility</a></li>
+      <li><a href="#t5"><span class="toc-num">05</span> Service Level Agreement</a></li>
+      <li><a href="#t6"><span class="toc-num">06</span> Account Suspension &amp; Termination</a></li>
+      <li><a href="#t7"><span class="toc-num">07</span> Modifications To Service</a></li>
+      <li><a href="#t8"><span class="toc-num">08</span> Limitation Of Liability</a></li>
+      <li><a href="#t9"><span class="toc-num">09</span> Governing Law &amp; Jurisdiction</a></li>
+      <li><a href="#t10"><span class="toc-num">10</span> Contact &amp; Support</a></li>
+    </ul>
+  </div>
+
+  <div class="section" id="t1">
+    <h2><span class="sec-badge">01</span> User Agreement &amp; Eligibility</h2>
     <p>By Accessing The ISMS Core Ecosystem (Admin Portal, Teacher App, Parents App) Provided By Durgaai Solutions, Your Educational Institution And Its Authorized Users Agree Strictly To Use The Software Per The Contracted Deployment Terms.</p>
+    <p>Access To ISMS Core Is Granted Only To:</p>
+    <ul>
+      <li><i data-lucide="check"></i> <strong>School Administrators And Principals:</strong> Via The ISMS ERP Admin Portal &mdash; Requires Valid School Code And Admin Credentials Issued By Durgaai Solutions.</li>
+      <li><i data-lucide="check"></i> <strong>Teaching And Non-Teaching Staff:</strong> Via The ISMS Staff Application &mdash; Credentials Provisioned By The School's Admin Account.</li>
+      <li><i data-lucide="check"></i> <strong>Parents And Guardians:</strong> Via The ISMS Parents App &mdash; Account Linked To A Registered Student Profile Created By The School.</li>
+      <li><i data-lucide="check"></i> <strong>Authorized IT Personnel:</strong> For System Maintenance And Integration Purposes Under A Documented Technical Support Agreement.</li>
+    </ul>
+    <div class="alert-box yellow" style="margin-top:24px;">
+      <div class="alert-icon"><i data-lucide="alert-triangle"></i></div>
+      <div class="alert-content">
+        <strong>Minors &amp; Children</strong>
+        ISMS Applications Are Designed For Use By Adults (Parents, Teachers, Administrative Staff). Minor Students Do Not Receive Direct App Logins. All Child-Related Data Is Managed By Adult Authorized Users Only, In Compliance With COPPA Guidelines.
+      </div>
+    </div>
   </div>
-  <div class="section">
-    <h2><span class="sec-badge">02</span> Acceptable Use & APIs</h2>
-    <p>Durgaai Solutions Provides The Underlying Code Algorithms And Cloud Routing Logic. However, The Exact Data (Fees, Marks, Notices) Remains The Exclusive Liability Of The School. Reverse Engineering Our Android Applications Or Unauthorized Vulnerability Scanning Of Our API Infrastructure Carries An Immediate Termination Of The SaaS License Without Refund.</p>
+
+  <div class="section" id="t2">
+    <h2><span class="sec-badge">02</span> Acceptable Use &amp; API Policy</h2>
+    <p>Durgaai Solutions Provides The Underlying Code Algorithms And Cloud Routing Logic. However, The Exact Data (Fees, Marks, Notices) Remains The Exclusive Liability Of The School. The Following Actions Are Strictly Prohibited:</p>
+    <ul>
+      <li><i data-lucide="x-circle"></i> <strong>Reverse Engineering:</strong> Decompiling, Disassembling, Or Reverse Engineering Any Part Of The ISMS Android APK, Web Portal, Or API Contracts Is Prohibited And Constitutes A Breach Of These Terms.</li>
+      <li><i data-lucide="x-circle"></i> <strong>Unauthorized API Access:</strong> Accessing Any ISMS API Endpoint Without A Valid Authenticated School-Scoped JWT Token &mdash; Including Automated Scraping Or Credential Stuffing Attacks.</li>
+      <li><i data-lucide="x-circle"></i> <strong>Vulnerability Scanning:</strong> Running Unauthorized Security Scanners Or Penetration Testing Tools Against ISMS Production Servers Without Prior Written Consent From Durgaai Solutions.</li>
+      <li><i data-lucide="x-circle"></i> <strong>Data Exfiltration:</strong> Downloading, Exporting, Or Distributing School Data Beyond The Intended Use Of The Platform Without Explicit Authorization From The Registering Institution.</li>
+      <li><i data-lucide="x-circle"></i> <strong>Credential Sharing:</strong> Sharing Login Credentials Between Multiple Users, Roles, Or Devices In A Manner That Circumvents The Role-Based Access Control Architecture.</li>
+      <li><i data-lucide="x-circle"></i> <strong>Service Interference:</strong> Any Deliberate Action Intended To Degrade, Disrupt, Or Overload ISMS Servers &mdash; Including DDoS Attacks, Flood Requests, Or Malicious Payload Injection.</li>
+    </ul>
+    <p>Violations Of This Policy Carry An Immediate Termination Of The SaaS License Without Refund, And May Result In Legal Action Under Applicable Cybercrime Legislation.</p>
   </div>
-  <div class="section">
-    <h2><span class="sec-badge">03</span> Modifications To Service</h2>
+
+  <div class="section" id="t3">
+    <h2><span class="sec-badge">03</span> Intellectual Property Rights</h2>
+    <p>All Intellectual Property Within The ISMS Core Ecosystem &mdash; Including But Not Limited To Source Code, UI/UX Designs, Database Schemas, API Specifications, Business Logic, And Documentation &mdash; Is The Exclusive Property Of Durgaai Solutions.</p>
+    <ul>
+      <li><i data-lucide="copyright"></i> <strong>Copyright Notice:</strong> &copy; 2026 Durgaai Solutions. All Rights Reserved. The ISMS Brand, Logo, And Product Names Are Trademarks Of Durgaai Solutions.</li>
+      <li><i data-lucide="code"></i> <strong>Source Code Confidentiality:</strong> The Backend Source Code (Django/Python), Frontend Code (React/Vite), Android Source (Ionic/Capacitor), And Database Migrations Are Proprietary Trade Secrets.</li>
+      <li><i data-lucide="package"></i> <strong>Deployment License:</strong> Schools Are Granted A Non-Exclusive, Non-Transferable License To Use The Deployed Instance Of ISMS For Internal Academic Administration &mdash; Not To Copy, Redistribute, Or Sublicense The Software.</li>
+      <li><i data-lucide="school"></i> <strong>School-Generated Data:</strong> Academic Data Created By School Staff And Students (Marks, Attendance, Fee Records) Remains The Intellectual Property Of The Registering Institution &mdash; Durgaai Solutions Makes No Ownership Claims On This Data.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="t4">
+    <h2><span class="sec-badge">04</span> Data Ownership &amp; School Responsibility</h2>
+    <p>Durgaai Solutions Acts As A Technology Service Provider &mdash; Not As A Data Controller For School-Specific Academic And Administrative Records. The Registering Institution Bears Full Responsibility For:</p>
+    <ul>
+      <li><i data-lucide="check"></i> <strong>Data Accuracy:</strong> Ensuring That Student Enrollment Data, Fee Structures, Staff Records, And Academic Calendars Entered Into The System Are Accurate And Up-To-Date.</li>
+      <li><i data-lucide="check"></i> <strong>User Provisioning:</strong> Creating, Deactivating, And Managing User Accounts For Staff And Parents &mdash; Durgaai Solutions Provides The Tools, But The School Controls Access.</li>
+      <li><i data-lucide="check"></i> <strong>Data Deletion Requests:</strong> Processing Parent Or Staff Requests To Delete Personal Records In Compliance With Any Applicable Local Privacy Regulations.</li>
+      <li><i data-lucide="check"></i> <strong>Compliance With Education Law:</strong> Ensuring That Use Of The Platform Complies With Any State-Specific Education Regulations, Right To Education Act, And Child Protection Laws.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="t5">
+    <h2><span class="sec-badge">05</span> Service Level Agreement (SLA)</h2>
+    <p>Durgaai Solutions Commits To The Following Service Levels For All Active ISMS Deployments:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Service</th><th>Uptime Target</th><th>Planned Maintenance Window</th></tr></thead>
+        <tbody>
+          <tr><td>ERP Admin Portal</td><td>99.9% Monthly</td><td>Sundays 02:00&mdash;04:00 IST (When Required)</td></tr>
+          <tr><td>Parents App API</td><td>99.9% Monthly</td><td>Same As Above</td></tr>
+          <tr><td>Staff App API</td><td>99.9% Monthly</td><td>Same As Above</td></tr>
+          <tr><td>Database Services</td><td>99.95% Monthly</td><td>Backup Windows Only (Non-Disruptive)</td></tr>
+          <tr><td>Email Notifications</td><td>Best-Effort</td><td>Third-Party Provider Subject To Their SLA</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:20px;">Planned Maintenance Is Communicated Via The Admin Portal Dashboard At Least 24 Hours In Advance. Emergency Patches Due To Critical Security Vulnerabilities May Be Applied With Shorter Notice Windows.</p>
+  </div>
+
+  <div class="section" id="t6">
+    <h2><span class="sec-badge">06</span> Account Suspension &amp; Termination</h2>
+    <p>Durgaai Solutions Reserves The Right To Suspend Or Terminate Access To ISMS Services Under The Following Circumstances:</p>
+    <ul>
+      <li><i data-lucide="alert-octagon"></i> <strong>Violation Of Acceptable Use Policy:</strong> Any Breach Of Section 02 (Acceptable Use) Results In Immediate Suspension Pending Investigation.</li>
+      <li><i data-lucide="credit-card"></i> <strong>Non-Payment:</strong> Accounts With Overdue Subscription Payments Beyond 30 Days Grace Period May Have API Access Throttled Or Suspended Until Dues Are Cleared.</li>
+      <li><i data-lucide="shield-off"></i> <strong>Security Incident:</strong> If A School Account Is Suspected Of Being Compromised, We May Temporarily Suspend Access To Prevent Data Exfiltration While The Incident Is Investigated.</li>
+      <li><i data-lucide="file-minus"></i> <strong>Contract Expiry:</strong> Upon Expiry Of The SaaS Deployment Contract, Read-Only Access May Be Provided For A 30-Day Data Export Period Before Full Account Decommissioning.</li>
+    </ul>
+    <p>Schools May Voluntarily Terminate Their Contract By Providing 30 Days Written Notice To <strong>contact@durgaaisolutions.in</strong>. Data Export Support Is Provided During The Termination Transition Period.</p>
+  </div>
+
+  <div class="section" id="t7">
+    <h2><span class="sec-badge">07</span> Modifications To Service</h2>
     <p>We Continuously Apply Hot-Fixes And Performance Tuning To Our Dedicated Server Pools To Ensure Speed During High-Load Reporting Days. Durgaai Solutions Reserves The Right To Patch Database Schemas Proactively Without Causing Downtime To The Client Endpoints.</p>
+    <p>Any Significant Feature Changes, Module Additions, Or API Version Migrations Will Be Communicated Via:</p>
+    <ul>
+      <li><i data-lucide="bell"></i> <strong>Admin Portal Notifications:</strong> In-App Banner Alerts Visible To Admin Users At Least 7 Days Before Major Changes.</li>
+      <li><i data-lucide="mail"></i> <strong>Email To Primary Contact:</strong> The Registered School Admin Contact Email Will Receive Detailed Release Notes For Every Minor And Major Update.</li>
+      <li><i data-lucide="git-branch"></i> <strong>Version Changelog:</strong> All Changes Are Versioned And Documented &mdash; Schools Can Reference Past Release Notes Through The Admin Support Portal.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="t8">
+    <h2><span class="sec-badge">08</span> Limitation Of Liability</h2>
+    <p>To The Maximum Extent Permitted By Applicable Law:</p>
+    <ul>
+      <li><i data-lucide="info"></i> Durgaai Solutions Is Not Liable For Any Indirect, Incidental, Or Consequential Damages Arising From The Use Or Inability To Use ISMS Services, Including But Not Limited To Loss Of Academic Data Due To Acts Outside Our Control.</li>
+      <li><i data-lucide="info"></i> Our Total Aggregate Liability For Any Claim Related To ISMS Services Shall Not Exceed The Total Fees Paid By The Institution In The 3 Months Preceding The Claim.</li>
+      <li><i data-lucide="info"></i> Durgaai Solutions Is Not Responsible For Data Loss Or Inaccuracies Resulting From Incorrect Data Entry By School Staff Or Unauthorized Actions By Compromised User Accounts.</li>
+      <li><i data-lucide="info"></i> Force Majeure Events &mdash; Including Internet Infrastructure Failures, Natural Disasters, Government Directives, Or Third-Party Service Outages &mdash; Are Excluded From SLA Calculations.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="t9">
+    <h2><span class="sec-badge">09</span> Governing Law &amp; Jurisdiction</h2>
+    <p>These Terms And Conditions Are Governed By And Construed In Accordance With The Laws Of The Republic Of India. Any Disputes Arising Out Of Or In Connection With These Terms Shall Be Subject To The Exclusive Jurisdiction Of The Courts Located In India.</p>
+    <p>By Using The ISMS Core Platform, Users And Institutions Irrevocably Consent To The Exclusive Jurisdiction Of Such Courts And Waive Any Objection To The Laying Of Venue In Such Jurisdiction.</p>
+    <div class="alert-box blue" style="margin-top:24px;">
+      <div class="alert-icon"><i data-lucide="globe"></i></div>
+      <div class="alert-content">
+        <strong>Applicable Legislation</strong>
+        These Terms Operate Under The Information Technology Act 2000 (India), DPDP Act 2023 (Digital Personal Data Protection), And Any Applicable State Education Department Regulations. Schools Are Responsible For Their Own Regulatory Compliance Within Their Jurisdiction.
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-cta" id="t10">
+    <h3><i data-lucide="headset"></i> Terms &amp; Legal Contact</h3>
+    <p>For Questions About These Terms, Contract Queries, Or Legal Correspondence &mdash; Please Contact Our Team. We Aim To Respond Within 3&mdash;5 Business Days.</p>
+    <a href="mailto:contact@durgaaisolutions.in" class="btn-mail"><i data-lucide="mail"></i> contact@durgaaisolutions.in</a>
+    <div class="meta-footer">
+      <div>Last Revised: June 2026 &bull; Version 2.1 &bull; Governing Jurisdiction: Republic Of India</div>
+    </div>
   </div>
 
 </div>
