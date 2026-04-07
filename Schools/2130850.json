@@ -5,6 +5,23 @@
   "api_url": "https://isms.newangelspratapgarh.in/api/",
   "contact": "Contact School Administration",
   "logo": "",
+  "attendance_zones": [
+    {
+      "key": "new-campus",
+      "name": "New Campus",
+      "lat": 25.895018,
+      "lng": 81.959751,
+      "radius_meters": 100
+    },
+    {
+      "key": "old-campus",
+      "name": "Old Campus",
+      "lat": 25.9128442,
+      "lng": 81.9881776,
+      "radius_meters": 100
+    }
+  ],
+  "radius_meters": 100,
   "period_times": [
     "9:10 - 9:50",
     "9:50 - 10:30",
