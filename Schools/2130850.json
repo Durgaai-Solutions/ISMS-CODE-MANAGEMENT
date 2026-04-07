@@ -21,8 +21,8 @@
       "radius_meters": 100
     },
     {
-      "key": "ISMS-Server",
-      "name": "i8o8i",
+      "key": "i8o8i",
+      "name": "ISMS-Server",
       "lat": 25.924389,
       "lng": 81.980047,
       "radius_meters": 100
