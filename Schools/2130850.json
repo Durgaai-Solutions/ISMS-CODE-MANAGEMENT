@@ -7,14 +7,14 @@
   "logo": "",
   "attendance_zones": [
     {
-      "key": "new-campus",
+      "key": "New-Campus",
       "name": "New Campus",
       "lat": 25.895018,
       "lng": 81.959751,
       "radius_meters": 100
     },
     {
-      "key": "old-campus",
+      "key": "Old-Campus",
       "name": "Old Campus",
       "lat": 25.9128442,
       "lng": 81.9881776,
