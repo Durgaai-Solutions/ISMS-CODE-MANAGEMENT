@@ -1,0 +1,36 @@
+{
+  "name": "Demo Public School",
+  "city": "Pratapgarh",
+  "state": "Uttar Pradesh",
+  "api_url": "https://isms.durgaaisolutions.in/api/",
+  "contact": "Contact School Administration",
+  "logo": "",
+  "attendance_zones": [
+    {
+      "key": "New-Campus",
+      "name": "New Campus",
+      "lat": 25.895018,
+      "lng": 81.959751,
+      "radius_meters": 100
+    },
+    {
+      "key": "Old-Campus",
+      "name": "Old Campus",
+      "lat": 25.9128442,
+      "lng": 81.9881776,
+      "radius_meters": 100
+    }
+  ],
+  "radius_meters": 100,
+  "period_times": [
+    "9:10 - 9:50",
+    "9:50 - 10:30",
+    "10:30 - 11:10",
+    "11:10 - 11:50",
+    "11:50 - 12:05",
+    "12:05 - 12:40",
+    "12:40 - 1:15",
+    "1:15 - 1:50",
+    "1:50 - 2:00"
+  ]
+}
